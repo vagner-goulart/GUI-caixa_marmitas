@@ -3,7 +3,9 @@ import sys
 sys.path.append(".")
 
 from tkinter import *
-from my_base_tkinter_objects import BaseCheckBox, BaseDropdownMenu, BaseDropdownMenuForQuant
+from my_base_tkinter_objects import (
+    BaseCheckBox, BaseDropdownMenu,
+    BaseDropdownMenuForQuant, FrameDisplayValue)
 
 
 class Foo():
@@ -23,31 +25,24 @@ class Foo():
         menu_de_quantidade.dropdown_menu.grid(row=linha, column=2)
 
 
-        this_frame.grid(pady=pading, columnspan=4)
+        this_frame.grid(pady=pading, columnspan=3)
 
 root_window = Tk()
 root_window.geometry("400x400")
 
-frame_1 = Frame(root_window, width=300, height=30)
-frame_1.config(bg="blue")
+frame_bebidas_outros = Frame(root_window, width=300, height=30)
+frame_bebidas_outros.config(bg="blue")
 
 lista_bebidas = ["Água", "CocaCola", "Pepsi"]
-sla = Foo(frame_1, 0, (10,20), lista_bebidas)
+frame_bebidas = Foo(frame_bebidas_outros, 0, (10,20), lista_bebidas)
 
 lista_outros = ["Halls", "Trident", "Bala"]
-sla_2 = Foo(frame_1, 1, (20, 10), lista_outros)
+frame_outros = Foo(frame_bebidas_outros, 1, (20, 10), lista_outros)
 
-label_valor_2 = Label(
-    frame_1, text="VALOR:",
-    font=("SourceSansPro", 10))
-label_valor_2.grid(row=2, column=1, stick=E)
+frame_valor = FrameDisplayValue(frame_bebidas_outros, 20.0)
+frame_valor.frame.grid(column=1, pady=(10,0))
 
-label_valor_3 = Label(
-    frame_1, text="",
-    font=(None, 10))
-label_valor_3.grid(row=2, column=2, stick=W)
-
-frame_1.pack()
-frame_1.pack_propagate(False)
+frame_bebidas_outros.pack()
+frame_bebidas_outros.pack_propagate(False)
 root_window.mainloop()
 
