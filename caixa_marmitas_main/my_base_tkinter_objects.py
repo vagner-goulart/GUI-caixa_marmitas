@@ -38,4 +38,28 @@ class BaseDropdownMenuForQuant():
             janela, self.current_value,
             *self.quant)
 
+        self.dropdown_menu.config(state=DISABLED)
+
         self.current_value.set(self.quant[0])
+
+
+class FrameDisplayValue():
+
+    def __init__(self, janela, valor=0.0):
+
+        self.frame = Frame(janela, bg=None)
+
+        generic_txt_label = Label(
+            self.frame, text="VALOR:",
+            font=("SourceSansPro", 11))
+        generic_txt_label.grid(row=0, column=0, stick=E)
+
+        label_valor_3 = Label(
+            self.frame,
+            text=valor,
+            font=(None, 11),
+            width=8,
+            borderwidth=1,
+            relief='solid',
+            anchor="e")
+        label_valor_3.grid(row=0, column=1, padx=(1,1), stick=W)
