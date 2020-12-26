@@ -1,22 +1,16 @@
 from tkinter import *
 
+
 class BaseCheckBox():
 
     def __init__(self, janela):
         self.chek_var = StringVar()
         self.check_box = Checkbutton(
-            janela, bg=None,
+            janela, bg="green",
             variable=self.chek_var,
-            onvalue="sim", offvalue="não")
+            onvalue="sim", offvalue="nao",)
 
         self.chek_var.set("nao")
-
-        self.chek_var.trace_add("write", self.printar_teste)
-
-    def printar_teste(self, *args):
-        print("slamano")
-        print(self.chek_var.get())
-        print(args)
 
 class BaseDropdownMenu():
 
@@ -27,7 +21,10 @@ class BaseDropdownMenu():
             janela, self.current_value,
             *self.opcoes)
         
-        self.dropdown_menu.config(width=15, font=("SourceSansPro", 13))
+        self.dropdown_menu.config(
+            width=15,
+            font=("SourceSansPro", 13),
+            state=DISABLED)
 
         self.current_value.set(self.opcoes[0])
 
