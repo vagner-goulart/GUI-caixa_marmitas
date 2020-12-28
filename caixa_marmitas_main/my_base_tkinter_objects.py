@@ -50,16 +50,16 @@ class BaseDropdownMenuForQuant(OptionMenu):
 
 class FrameDisplayValue(Frame):
 
-    def __init__(self, janela, valor=0.0):
+    def __init__(self, janela, valor=0.00):
         super().__init__(janela, bg=None)
 
         generic_txt_label = Label(
-            self, text="VALOR:", font=("SourceSansPro", 11))
+            self, text="VALOR:", font=("SourceSansPro", 11), bg="#E0E0E0",)
         generic_txt_label.grid(row=0, column=0, stick=E)
 
         label_valor_3 = Label(
             self,
-            text=valor, font=(None, 11),
+            text=valor, font=(None, 12),
             borderwidth=1, relief='solid',
             width=8,
             anchor="e")
