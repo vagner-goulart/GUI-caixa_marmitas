@@ -22,9 +22,8 @@ class BaseDropdownMenu(OptionMenu):
     def __init__(self, janela, lista_de_opcoes):
         self.current_value = StringVar()
         self.opcoes = lista_de_opcoes
-        super().__init__(
-            janela, self.current_value,
-            *self.opcoes)
+        
+        super().__init__(janela, self.current_value, *self.opcoes)
         
         self.config(
             width=15,
