@@ -4,8 +4,8 @@ from PIL import ImageTk, Image
 
 class BaseCheckBox(Checkbutton):
 
-    def __init__(self, janela):
-        super().__init__(janela)
+    def __init__(self, janela=None, **kwargs):
+        super().__init__(janela, **kwargs)
         self.chek_var = StringVar()
         self.config(
             bg="green",
