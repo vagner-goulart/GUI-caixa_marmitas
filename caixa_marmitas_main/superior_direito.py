@@ -9,25 +9,25 @@ from my_base_tkinter_objects import (
     BaseDropdownMenuForQuant, FrameDisplayValue)
 
 
-class Barr():
+class Barr(Frame):
 
-    def __init__(self, janela, linha, nome_marmita):
-        
-        this_frame = Frame(janela, bg=None, bd=1, relief='raised')
+    def __init__(self, janela, linha, nome_marmita, **kwargs):
+        super().__init__(janela, **kwargs)
+        self.config(bg=None, bd=1, relief='raised')
 
-        self.check_box = BaseCheckBox(this_frame)
+        self.check_box = BaseCheckBox(self)
         self.check_box.grid(row=linha, column=0)
 
-        self.menu_quant = BaseDropdownMenuForQuant(this_frame)
+        self.menu_quant = BaseDropdownMenuForQuant(self)
         self.menu_quant.grid(row=linha, column=1, padx=(15,10))
 
         self.label_marmita = Label(
-            this_frame,
+            self,
             text=nome_marmita, font=("SourceSansPro", 11),
             width=10,)
         self.label_marmita.grid(row=linha, column=2)
 
-        this_frame.grid(pady=(20,0))
+        self.grid(pady=(20,0))
 
         self.check_box.chek_var.trace_add('write', self.grey_out_elements)
 
