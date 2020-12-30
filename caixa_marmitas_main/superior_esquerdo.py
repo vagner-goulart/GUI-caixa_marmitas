@@ -10,23 +10,21 @@ from my_base_tkinter_objects import (
     BaseDropdownMenuForQuant, FrameDisplayValue)
 
 
-class Foo():
+class Foo(Frame):
 
-    def __init__(self, janela, linha, pading, lista_d_items):
+    def __init__(self, janela, linha, pading, lista_d_items, **kwargs):
+        super().__init__(janela,bg='red', **kwargs)        
         
-        this_frame = Frame(janela, bg="red")
-        
-        self.check_caixa = BaseCheckBox(this_frame)
-        #self.check_caixa.load_on_off_images()
+        self.check_caixa = BaseCheckBox(self)
         self.check_caixa.grid(row=linha, column=0)
 
-        self.menu_de_items = BaseDropdownMenu(this_frame, lista_d_items)
+        self.menu_de_items = BaseDropdownMenu(self, lista_d_items)
         self.menu_de_items.grid(row=linha, column=1, padx=(25,20))
 
-        self.menu_de_quantidade = BaseDropdownMenuForQuant(this_frame)
+        self.menu_de_quantidade = BaseDropdownMenuForQuant(self)
         self.menu_de_quantidade.grid(row=linha, column=2)
 
-        this_frame.grid(pady=pading, columnspan=3)
+        self.grid(pady=pading, columnspan=3)
 
         self.check_caixa.chek_var.trace_add('write', self.grey_out_elements)
 
