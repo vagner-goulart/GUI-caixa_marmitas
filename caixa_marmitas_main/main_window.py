@@ -44,6 +44,14 @@ marm_grande = MarmitasFrames(frame_marmitas, 2, "GRANDE")
 frame_valor = FrameDisplayValue(frame_marmitas)
 frame_valor.grid(pady=(15,0))
 
+# bottom left corner (parte do prato do dia)
+
+frame_dia_ingredientes = Frame(root_window ,width=200, height=200 ,bg="#E0E0E0", bd=2)
+
+dia_semana = "SEGUNDA"
+ingredientes_dia = "Arroz, Feijão, Macarrão ao molho vermelho,\nFarofa, Bisteca de porco, Salsicha ao molho.\nFrio: Alface e Tomate."
+
+prato_dia_frame = PratoDiaFrame(frame_dia_ingredientes, dia_semana, ingredientes_dia)
 
 
 # packing the frame with the objects on the screen
@@ -51,5 +59,6 @@ frame_valor.grid(pady=(15,0))
 # top left (bebidas)
 frame_bebidas_outros.grid(row=0, column=0)
 frame_marmitas.grid(row=0, column=1)
+frame_dia_ingredientes.grid(row=1, column=0)
 
 root_window.mainloop()
