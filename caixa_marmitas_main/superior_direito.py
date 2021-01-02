@@ -9,7 +9,7 @@ from my_base_tkinter_objects import (
     BaseDropdownMenuForQuant, FrameDisplayValue)
 
 
-class Barr(Frame):
+class MarmitasFrames(Frame):
 
     def __init__(self, janela, linha, nome_marmita, **kwargs):
         super().__init__(janela, **kwargs)
@@ -46,9 +46,9 @@ root_window.geometry("400x400+900+100")
 
 frame_marmitas = Frame(root_window, width=250, height=250, bg="#E0E0E0")
 
-marm_pequena = Barr(frame_marmitas, 0, "PEQUENA")
-marm_media = Barr(frame_marmitas, 1, "MEDIA")
-marm_grande = Barr(frame_marmitas, 2, "GRANDE")
+marm_pequena = MarmitasFrames(frame_marmitas, 0, "PEQUENA")
+marm_media = MarmitasFrames(frame_marmitas, 1, "MEDIA")
+marm_grande = MarmitasFrames(frame_marmitas, 2, "GRANDE")
 
 
 frame_valor = FrameDisplayValue(frame_marmitas)
