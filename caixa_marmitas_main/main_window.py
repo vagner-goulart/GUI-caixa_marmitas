@@ -16,8 +16,9 @@ on_image = ImageTk.PhotoImage(Image.open("caixa_marmitas_main/13x13_on_img.png")
 off_image = ImageTk.PhotoImage(Image.open("caixa_marmitas_main/13x13_off_img.png"))
 
 
-# creating the top left corner (parte das bebidas)
+# creating the frames that will go into the main window
 
+# top left corner (parte das bebidas)
 frame_bebidas_outros = Frame(root_window, width=300, height=30)
 frame_bebidas_outros.config(bg="blue")
 
