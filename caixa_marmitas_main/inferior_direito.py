@@ -27,17 +27,17 @@ class TrocoFrames(Frame):
 root_window = Tk()
 root_window.geometry("400x400+900+100")
 
-sla_frame = Frame(root_window, width=300, height=300, bg='red')
+pagamento_frame = Frame(root_window, width=300, height=300, bg='red')
 
-test = TrocoFrames(sla_frame, "Total")
+total_frame = TrocoFrames(pagamento_frame, "Total")
 
-check_sla = BaseCheckBox(sla_frame)
-check_sla.config(text="Pagar com cartão", font=("SourceSansPro", 15))
-check_sla.grid(sticky=W, padx=(5,0), pady=(10,0))
+pagar_com_cartao_checkbox = BaseCheckBox(pagamento_frame)
+pagar_com_cartao_checkbox.config(text="Pagar com cartão", font=("SourceSansPro", 15))
+pagar_com_cartao_checkbox.grid(sticky=W, padx=(5,0), pady=(10,0))
 
-test_1 = TrocoFrames(sla_frame, "Input")
-test_2 = TrocoFrames(sla_frame, "Troco")
+dinheiro_recebido_frame = TrocoFrames(pagamento_frame, "Input")
+troco_do_dinheiro_frame = TrocoFrames(pagamento_frame, "Troco")
 
-sla_frame.grid()
-#sla_frame.grid_propagate(False)
+pagamento_frame.grid()
+#pagamento_frame.grid_propagate(False)
 root_window.mainloop()
