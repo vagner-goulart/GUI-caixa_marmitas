@@ -2,6 +2,7 @@ import sys
 sys.path.append(".")
 
 from tkinter import *
+from PIL import ImageTk, Image
 
 
 root_window = Tk()
