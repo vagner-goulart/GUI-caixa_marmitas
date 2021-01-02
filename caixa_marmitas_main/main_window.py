@@ -34,6 +34,7 @@ frame_valor = FrameDisplayValue(frame_bebidas_outros, "0.00")
 frame_valor.grid(column=1, pady=(10,0))
 
 # packing the frame with the objects on the screen
-frame_bebidas_outros.grid()
+# top left (bebidas)
+frame_bebidas_outros.grid(row=0, column=0)
 
 root_window.mainloop()
