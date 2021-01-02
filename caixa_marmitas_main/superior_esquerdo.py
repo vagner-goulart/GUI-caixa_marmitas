@@ -10,10 +10,10 @@ from my_base_tkinter_objects import (
     BaseDropdownMenuForQuant, FrameDisplayValue)
 
 
-class Foo(Frame):
+class BebidasFrames(Frame):
 
     def __init__(self, janela, linha, pading, lista_d_items, **kwargs):
-        super().__init__(janela,bg='red', **kwargs)        
+        super().__init__(janela, bg='red', **kwargs)        
         
         self.check_caixa = BaseCheckBox(self)
         self.check_caixa.grid(row=linha, column=0)
@@ -53,10 +53,10 @@ frame_bebidas_outros = Frame(root_window, width=300, height=30)
 frame_bebidas_outros.config(bg="blue")
 
 lista_bebidas = ["Água", "CocaCola", "Pepsi"]
-frame_bebidas = Foo(frame_bebidas_outros, 0, (10,20), lista_bebidas)
+frame_bebidas = BebidasFrames(frame_bebidas_outros, 0, (10,20), lista_bebidas)
 
 lista_outros = ["Halls", "Trident", "Bala"]
-frame_outros = Foo(frame_bebidas_outros, 1, (20, 10), lista_outros)
+frame_outros = BebidasFrames(frame_bebidas_outros, 1, (20, 10), lista_outros)
 
 # TODO: find better way off doing this
 frame_bebidas.check_caixa.load_on_off_images(on_image, off_image)
