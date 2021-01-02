@@ -45,7 +45,6 @@ frame_valor = FrameDisplayValue(frame_marmitas)
 frame_valor.grid(pady=(15,0))
 
 # bottom left corner (parte do prato do dia)
-
 frame_dia_ingredientes = Frame(root_window ,width=200, height=200 ,bg="#E0E0E0", bd=2)
 
 dia_semana = "SEGUNDA"
@@ -53,6 +52,17 @@ ingredientes_dia = "Arroz, Feijão, Macarrão ao molho vermelho,\nFarofa, Bistec
 
 prato_dia_frame = PratoDiaFrame(frame_dia_ingredientes, dia_semana, ingredientes_dia)
 
+# bottom right corner (parte do pagamento)
+pagamento_frame = Frame(root_window, width=300, height=300, bg='red')
+
+total_frame = TrocoFrames(pagamento_frame, "Total")
+
+pagar_com_cartao_checkbox = BaseCheckBox(pagamento_frame)
+pagar_com_cartao_checkbox.config(text="Pagar com cartão", font=("SourceSansPro", 15))
+pagar_com_cartao_checkbox.grid(sticky=W, padx=(5,0), pady=(10,0))
+
+dinheiro_recebido_frame = TrocoFrames(pagamento_frame, "Input")
+troco_do_dinheiro_frame = TrocoFrames(pagamento_frame, "Troco")
 
 # packing the frame with the objects on the screen
 
@@ -60,5 +70,6 @@ prato_dia_frame = PratoDiaFrame(frame_dia_ingredientes, dia_semana, ingredientes
 frame_bebidas_outros.grid(row=0, column=0)
 frame_marmitas.grid(row=0, column=1)
 frame_dia_ingredientes.grid(row=1, column=0)
+pagamento_frame.grid(row=1, column=1)
 
 root_window.mainloop()
