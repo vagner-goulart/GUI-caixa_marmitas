@@ -31,8 +31,8 @@ frame_outros = BebidasFrames(frame_bebidas_outros, 1, (20, 10), lista_outros)
 frame_bebidas.check_caixa.load_on_off_images(on_image, off_image)
 frame_outros.check_caixa.load_on_off_images(on_image, off_image)
 
-frame_valor = FrameDisplayValue(frame_bebidas_outros, "0.00")
-frame_valor.grid(column=1, pady=(10,0))
+frame_valor_bebidas = FrameDisplayValue(frame_bebidas_outros, "0.00")
+frame_valor_bebidas.grid(column=1, pady=(10,0))
 
 # top right corner (parte das marmitas)
 frame_marmitas = Frame(root_window, width=250, height=250, bg="#E0E0E0")
@@ -41,8 +41,8 @@ marm_pequena = MarmitasFrames(frame_marmitas, 0, "PEQUENA")
 marm_media = MarmitasFrames(frame_marmitas, 1, "MEDIA")
 marm_grande = MarmitasFrames(frame_marmitas, 2, "GRANDE")
 
-frame_valor = FrameDisplayValue(frame_marmitas)
-frame_valor.grid(pady=(15,0))
+frame_valor_marmitas = FrameDisplayValue(frame_marmitas)
+frame_valor_marmitas.grid(pady=(15,0))
 
 # bottom left corner (parte do prato do dia)
 frame_dia_ingredientes = Frame(root_window ,width=200, height=200 ,bg="#E0E0E0", bd=2)
