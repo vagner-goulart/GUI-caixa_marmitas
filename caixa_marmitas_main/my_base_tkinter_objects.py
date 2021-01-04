@@ -58,10 +58,10 @@ class FrameDisplayValue(Frame):
             self, text="VALOR:", font=("SourceSansPro", 11), bg="#E0E0E0",)
         generic_txt_label.grid(row=0, column=0, stick=E)
 
-        label_valor_3 = Label(
+        self.label_valor_3 = Label(
             self,
-            text=valor, font=(None, 12),
+            text=self.value_var.get(), font=(None, 12),
             borderwidth=1, relief='solid',
             width=8,
             anchor="e")
-        label_valor_3.grid(row=0, column=1, padx=(1,1), stick=W)
+        self.label_valor_3.grid(row=0, column=1, padx=(1,1), stick=W)
