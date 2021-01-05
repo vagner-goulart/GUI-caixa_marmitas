@@ -44,6 +44,10 @@ class BebidasFrames(Frame):
 
     def get_quant_from_quantmenu(self):
         return self.menu_de_quantidade.current_value.get()
+
+    @property
+    def get_checkbox_state(self):
+        return self.check_caixa.chek_var.get()
 class MarmitasFrames(Frame):
 
     def __init__(self, janela, linha, nome_marmita, **kwargs):
