@@ -25,6 +25,9 @@ class BebidasFrames(Frame):
 
         self.check_caixa.chek_var.trace_add('write', self.grey_out_elements)
 
+        self.added_value = 0
+        self.previous_quant = self.get_quant_from_quantmenu()
+
     # TODO: esse metodo, assim como o trace_add acima, ta estranho. arruma dps
     def grey_out_elements(self, *args):
         check_buton_state = self.check_caixa.chek_var.get()
