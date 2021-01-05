@@ -48,6 +48,11 @@ class BebidasFrames(Frame):
     @property
     def get_checkbox_state(self):
         return self.check_caixa.chek_var.get()
+
+    @property
+    def checkbox_is_active(self):
+        state = self.get_checkbox_state
+        return state == "sim"
 class MarmitasFrames(Frame):
 
     def __init__(self, janela, linha, nome_marmita, **kwargs):
