@@ -60,7 +60,7 @@ class FrameDisplayValue(Frame):
 
         self.label_valor_3 = Label(
             self,
-            text=self.value_var.get(), font=(None, 12),
+            textvariable=self.value_var, font=(None, 12),
             borderwidth=1, relief='solid',
             width=8,
             anchor="e")
