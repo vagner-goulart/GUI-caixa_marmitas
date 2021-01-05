@@ -31,6 +31,7 @@ class BebidasFrames(Frame):
     # TODO: esse metodo, assim como o trace_add acima, ta estranho. arruma dps
     def grey_out_elements(self, *args):
         check_buton_state = self.check_caixa.chek_var.get()
+        self.update_value_label()
 
         if check_buton_state == "sim":
             self.menu_de_items.config(state=NORMAL)
