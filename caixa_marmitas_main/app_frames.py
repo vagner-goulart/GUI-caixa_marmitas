@@ -9,7 +9,7 @@ from my_base_tkinter_objects import (
 
 class BebidasFrames(Frame):
 
-    def __init__(self, janela, linha, pading, lista_d_items, **kwargs):
+    def __init__(self, janela, linha, pading, lista_d_items, var_nome, **kwargs):
         super().__init__(janela,bg='red', **kwargs)        
         
         self.check_caixa = BaseCheckBox(self)
@@ -18,7 +18,7 @@ class BebidasFrames(Frame):
         self.menu_de_items = BaseDropdownMenu(self, lista_d_items)
         self.menu_de_items.grid(row=linha, column=1, padx=(25,20))
 
-        self.menu_de_quantidade = BaseDropdownMenuForQuant(self)
+        self.menu_de_quantidade = BaseDropdownMenuForQuant(self, var_nome)
         self.menu_de_quantidade.grid(row=linha, column=2)
 
         self.grid(pady=pading, columnspan=3)
