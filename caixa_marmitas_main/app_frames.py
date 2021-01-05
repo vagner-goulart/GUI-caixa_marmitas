@@ -57,6 +57,11 @@ class BebidasFrames(Frame):
 
     def link_var_to_frame(self, var):
         self.value_var_to_update = var.value_var
+
+    def add_traces_to_dropdownmenus(self):
+        # adding a trace to the items menu is not necessary in the moment
+        #self.menu_de_items.current_value.trace_add('write', self.update_value_label)
+        self.menu_de_quantidade.current_value.trace_add('write', self.update_value_label)
 class MarmitasFrames(Frame):
 
     def __init__(self, janela, linha, nome_marmita, **kwargs):
