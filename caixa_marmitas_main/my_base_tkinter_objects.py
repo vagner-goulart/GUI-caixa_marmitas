@@ -35,8 +35,8 @@ class BaseDropdownMenu(OptionMenu):
 
 class BaseDropdownMenuForQuant(OptionMenu):
 
-    def __init__(self, janela):
-        self.current_value = IntVar()
+    def __init__(self, janela, var_nome):
+        self.current_value = IntVar(name=var_nome)
         self.quant = [1,2,3,4,5]
         super().__init__(
             janela, self.current_value,
