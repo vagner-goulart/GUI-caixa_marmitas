@@ -42,6 +42,8 @@ class BebidasFrames(Frame):
             self.menu_de_quantidade.config(state=DISABLED)
 
 
+    def get_quant_from_quantmenu(self):
+        return self.menu_de_quantidade.current_value.get()
 class MarmitasFrames(Frame):
 
     def __init__(self, janela, linha, nome_marmita, **kwargs):
