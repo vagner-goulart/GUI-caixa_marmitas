@@ -64,12 +64,12 @@ class BebidasFrames(Frame):
         self.menu_de_quantidade.current_value.trace_add('write', self.update_value_label)
  
     def calculate_new_value(self, v_name):
-        n_val = self.value_var_to_update.get()
+        c_val = self.value_var_to_update.get()
         quant = self.get_quant_from_quantmenu()
 
-        print(f"n_val= {n_val}\n", f"added_value= {self.added_value}")
+        print(f"c_val= {c_val}\n", f"added_value= {self.added_value}")
 
-        if not self.checkbox_is_active and n_val > 0:
+        if not self.checkbox_is_active and c_val > 0:
             self.added_value = -(quant*5.0)
         else:
             self.added_value = quant*5.0
@@ -78,7 +78,7 @@ class BebidasFrames(Frame):
             self.added_value -= self.previous_quant*5.0
 
         self.previous_quant = self.get_quant_from_quantmenu()
-        print(f"n_val= {n_val}\n", f"added_value= {self.added_value}")
+        print(f"c_val= {c_val}\n", f"added_value= {self.added_value}")
         print(v_name)
 
         return self.added_value
