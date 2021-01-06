@@ -44,13 +44,12 @@ class BebidasFrames(Frame):
     def get_quant_from_quantmenu(self):
         return self.menu_de_quantidade.current_value.get()
 
-    @property
     def get_checkbox_state(self):
         return self.check_caixa.chek_var.get()
 
     @property
     def checkbox_is_active(self):
-        state = self.get_checkbox_state
+        state = self.get_checkbox_state()
         return state == "sim"
 
     def link_var_to_frame(self, var):
