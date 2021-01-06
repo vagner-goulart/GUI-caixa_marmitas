@@ -72,4 +72,9 @@ frame_marmitas.grid(row=0, column=1)
 frame_dia_ingredientes.grid(row=1, column=0)
 pagamento_frame.grid(row=1, column=1)
 
+frame_bebidas.link_var_to_frame(frame_valor_bebidas)
+frame_bebidas.add_traces_to_dropdownmenus()
+frame_outros.link_var_to_frame(frame_valor_bebidas)
+frame_outros.add_traces_to_dropdownmenus()
+
 root_window.mainloop()
