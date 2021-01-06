@@ -41,7 +41,6 @@ class BebidasFrames(Frame):
             self.menu_de_items.config(state=DISABLED)
             self.menu_de_quantidade.config(state=DISABLED)
 
-
     def get_quant_from_quantmenu(self):
         return self.menu_de_quantidade.current_value.get()
 
@@ -53,7 +52,6 @@ class BebidasFrames(Frame):
     def checkbox_is_active(self):
         state = self.get_checkbox_state
         return state == "sim"
-
 
     def link_var_to_frame(self, var):
         self.value_var_to_update = var.value_var
