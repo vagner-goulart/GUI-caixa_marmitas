@@ -23,10 +23,10 @@ frame_bebidas_outros = Frame(root_window, width=300, height=30)
 frame_bebidas_outros.config(bg="blue")
 
 lista_bebidas = ["Água", "CocaCola", "Pepsi"]
-frame_bebidas = BebidasFrames(frame_bebidas_outros, 0, (10,20), lista_bebidas)
+frame_bebidas = BebidasFrames(frame_bebidas_outros, 0, (10,20), lista_bebidas, "bebidas")
 
 lista_outros = ["Halls", "Trident", "Bala"]
-frame_outros = BebidasFrames(frame_bebidas_outros, 1, (20, 10), lista_outros)
+frame_outros = BebidasFrames(frame_bebidas_outros, 1, (20, 10), lista_outros, "outros")
 
 frame_bebidas.check_caixa.load_on_off_images(on_image, off_image)
 frame_outros.check_caixa.load_on_off_images(on_image, off_image)
@@ -37,9 +37,9 @@ frame_valor_bebidas.grid(column=1, pady=(10,0))
 # top right corner (parte das marmitas)
 frame_marmitas = Frame(root_window, width=250, height=250, bg="#E0E0E0")
 
-marm_pequena = MarmitasFrames(frame_marmitas, 0, "PEQUENA")
-marm_media = MarmitasFrames(frame_marmitas, 1, "MEDIA")
-marm_grande = MarmitasFrames(frame_marmitas, 2, "GRANDE")
+marm_pequena = MarmitasFrames(frame_marmitas, 0, "PEQUENA", "marm_pequ")
+marm_media = MarmitasFrames(frame_marmitas, 1, "MEDIA", "marm_media")
+marm_grande = MarmitasFrames(frame_marmitas, 2, "GRANDE", "marm_grande")
 
 frame_valor_marmitas = FrameDisplayValue(frame_marmitas)
 frame_valor_marmitas.grid(pady=(15,0))
