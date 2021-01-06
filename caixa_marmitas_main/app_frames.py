@@ -95,8 +95,8 @@ class MarmitasFrames(Frame):
         self.check_box = BaseCheckBox(self)
         self.check_box.grid(row=linha, column=0)
 
-        self.menu_quant = BaseDropdownMenuForQuant(self, var_nome)
-        self.menu_quant.grid(row=linha, column=1, padx=(15,10))
+        self.menu_de_quantidade = BaseDropdownMenuForQuant(self, var_nome)
+        self.menu_de_quantidade.grid(row=linha, column=1, padx=(15,10))
 
         self.label_marmita = Label(
             self,
@@ -113,10 +113,10 @@ class MarmitasFrames(Frame):
         check_buton_state = self.check_box.chek_var.get()
 
         if check_buton_state == "sim":
-            self.menu_quant.config(state=NORMAL)
+            self.menu_de_quantidade.config(state=NORMAL)
         
         else:
-            self.menu_quant.config(state=DISABLED)
+            self.menu_de_quantidade.config(state=DISABLED)
 
 
 class PratoDiaFrame(Frame):
