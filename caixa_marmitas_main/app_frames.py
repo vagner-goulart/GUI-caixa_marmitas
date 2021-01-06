@@ -63,6 +63,10 @@ class BebidasFrames(Frame):
         #self.menu_de_items.current_value.trace_add('write', self.update_value_label)
         self.menu_de_quantidade.current_value.trace_add('write', self.update_value_label)
  
+    def update_value_label(self, v_name=None, *args):
+        new_value = self.calculate_new_value(v_name)
+        self.value_var_to_update.set(new_value)
+ 
     def calculate_new_value(self, v_name):
         current_val = self.value_var_to_update.get()
         quant = self.get_quant_from_quantmenu()
