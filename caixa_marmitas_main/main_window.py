@@ -65,8 +65,6 @@ dinheiro_recebido_frame = TrocoFrames(pagamento_frame, "Input")
 troco_do_dinheiro_frame = TrocoFrames(pagamento_frame, "Troco")
 
 # packing the frame with the objects on the screen
-
-# top left (bebidas)
 frame_bebidas_outros.grid(row=0, column=0)
 frame_marmitas.grid(row=0, column=1)
 frame_dia_ingredientes.grid(row=1, column=0)
