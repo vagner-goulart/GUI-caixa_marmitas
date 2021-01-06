@@ -85,7 +85,7 @@ class BebidasFrames(Frame):
         print(f"c_val= {current_val}\n", f"added_value= {self.added_value}")
         print(v_name)
 
-        return self.added_value
+        return self.added_value + current_val
         
 
 class MarmitasFrames(Frame):
