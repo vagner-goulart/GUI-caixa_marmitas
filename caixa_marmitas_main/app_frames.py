@@ -90,14 +90,14 @@ class BebidasFrames(Frame):
 
 class MarmitasFrames(Frame):
 
-    def __init__(self, janela, linha, nome_marmita, **kwargs):
+    def __init__(self, janela, linha, nome_marmita, var_nome, **kwargs):
         super().__init__(janela, **kwargs)
         self.config(bg=None, bd=1, relief='raised')
 
         self.check_box = BaseCheckBox(self)
         self.check_box.grid(row=linha, column=0)
 
-        self.menu_quant = BaseDropdownMenuForQuant(self)
+        self.menu_quant = BaseDropdownMenuForQuant(self, var_nome)
         self.menu_quant.grid(row=linha, column=1, padx=(15,10))
 
         self.label_marmita = Label(
