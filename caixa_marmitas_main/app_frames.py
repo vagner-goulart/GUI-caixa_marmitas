@@ -132,7 +132,6 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
             self.menu_de_quantidade.config(state=DISABLED)
 
 
-
 class PratoDiaFrame(Frame):
 
     def __init__(self, janela, dia, ingredientes, **kwargs):
@@ -161,5 +160,4 @@ class TrocoFrames(Frame):
         self.value_label.grid(row=0, column=1, sticky=W)
 
         self.grid(sticky=W, padx=(5,0), pady=(10,0))
-
 
