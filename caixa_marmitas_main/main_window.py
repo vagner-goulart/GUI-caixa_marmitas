@@ -40,6 +40,7 @@ frame_marmitas = Frame(root_window, width=250, height=250, bg="#E0E0E0")
 marm_pequena = MarmitasFrames(frame_marmitas, 0, "PEQUENA", "marm_pequena")
 marm_media = MarmitasFrames(frame_marmitas, 1, "MEDIA", "marm_media")
 marm_grande = MarmitasFrames(frame_marmitas, 2, "GRANDE", "marm_grande")
+tipos_de_marmitas = [marm_pequena, marm_media, marm_grande]
 
 frame_valor_marmitas = FrameDisplayValue(frame_marmitas)
 frame_valor_marmitas.grid(pady=(15,0))
@@ -75,4 +76,7 @@ frame_bebidas.add_traces_to_dropdownmenus()
 frame_outros.link_var_to_frame(frame_valor_bebidas)
 frame_outros.add_traces_to_dropdownmenus()
 
+for marmita in tipos_de_marmitas:
+    marmita.link_var_to_frame(frame_valor_marmitas)
+    marmita.add_traces_to_dropdownmenus()
 root_window.mainloop()
