@@ -79,4 +79,8 @@ frame_outros.add_traces_to_dropdownmenus()
 for marmita in tipos_de_marmitas:
     marmita.link_var_to_frame(frame_valor_marmitas)
     marmita.add_traces_to_dropdownmenus()
+
+frame_valor_bebidas.create_link_to_label_var(total_frame.total_value_bebidas)
+frame_valor_marmitas.create_link_to_label_var(total_frame.total_value_marmitas)
+
 root_window.mainloop()
