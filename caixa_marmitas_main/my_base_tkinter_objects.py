@@ -65,3 +65,6 @@ class FrameDisplayValue(Frame):
             width=8,
             anchor="e")
         self.label_valor_3.grid(row=0, column=1, padx=(1,1), stick=W)
+
+        self.value_var.trace_add('write', self.update_label_var)
+
