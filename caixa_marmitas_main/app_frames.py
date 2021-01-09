@@ -152,11 +152,13 @@ class TrocoFrames(Frame):
     def __init__(self, janela, texto, **kwargs):
         super().__init__(janela, **kwargs)
 
+        self.value = StringVar(value="0.00")
+
         self.generic_txt_label = Label(self, text=texto+":", width=5, anchor=W, font=("SourceSansPro", 20))
         self.generic_txt_label.grid(row=0, column=0, sticky=W)
         
         self.value_label = Label(
-            self, text="0.00", bd=2, relief='solid', width=10, anchor=E, font=("SourceSansPro", 20))
+            self, textvariable=self.value, bd=2, relief='solid', width=10, anchor=E, font=("SourceSansPro", 20))
         self.value_label.grid(row=0, column=1, sticky=W)
 
         self.grid(sticky=W, padx=(5,0), pady=(10,0))
