@@ -68,3 +68,6 @@ class FrameDisplayValue(Frame):
 
         self.value_var.trace_add('write', self.update_label_var)
 
+    def create_link_to_label_var(self, var):
+        self.total_label_var = var
+
