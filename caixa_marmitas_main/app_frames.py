@@ -151,7 +151,7 @@ class TrocoFrames(Frame):
 
     def __init__(self, janela, texto, **kwargs):
         super().__init__(janela, **kwargs)
-
+        
         self.value = StringVar(value="0.00")
 
         self.generic_txt_label = Label(self, text=texto+":", width=5, anchor=W, font=("SourceSansPro", 20))
@@ -163,3 +163,24 @@ class TrocoFrames(Frame):
 
         self.grid(sticky=W, padx=(5,0), pady=(10,0))
 
+        self.total_value_bebidas = DoubleVar()
+        self.total_value_marmitas = DoubleVar()
+
+        self.total_value_bebidas.trace_add('write', self.update_value_var)
+        self.total_value_marmitas.trace_add('write', self.update_value_var)
+
+    def update_value_var(self, *args):
+        new_value = self.total_value_bebidas.get() + self.total_value_marmitas.get()
+        new_value = self.format_new_value(new_value)
+
+        self.value.set(new_value)
+
+    @staticmethod
+    def format_new_value(value):
+        val = str(value)
+        splited_val = val.split(".")
+
+        if len(splited_val[-1]) == 1:
+            val += "0"
+
+        return val
