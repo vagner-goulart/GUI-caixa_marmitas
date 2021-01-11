@@ -92,11 +92,13 @@ def update_dinheiro_recebido(event):
     char_name = event.keysym
 
     if char_name == 'BackSpace':
-        base_str = base_str[:-1]
-
-        if len(base_str) == 2:
-            base_str = "0" + base_str
-
+        only_have_zeros = len(set(base_str)) == 1 and "0" in set(base_str)
+        
+        if not only_have_zeros:
+            base_str = base_str[:-1]
+            
+            if len(base_str) == 2:
+                base_str = "0" + base_str
 
     elif char_name.isdigit() and len(base_str) < 9:
         if base_str[0] == "0":
