@@ -110,4 +110,7 @@ def update_dinheiro_recebido(event):
     
     dinheiro_recebido_frame.value.set(f"{base_str[:-2]}.{base_str[-2:]}")
 
+dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
+dinheiro_recebido_frame.focus_set()
+
 root_window.mainloop()
