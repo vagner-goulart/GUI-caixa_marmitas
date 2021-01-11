@@ -169,6 +169,12 @@ class TrocoFrames(Frame):
         self.total_value_bebidas.trace_add('write', self.update_value_var)
         self.total_value_marmitas.trace_add('write', self.update_value_var)
 
+    def get_value(self):
+        return self.value.get()
+
+    def set_value(self, val):
+        self.value.set(val)
+
     def update_value_var(self, *args):
         new_value = self.total_value_bebidas.get() + self.total_value_marmitas.get()
         new_value = self.format_new_value(new_value)
