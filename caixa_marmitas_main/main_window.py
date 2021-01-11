@@ -85,7 +85,7 @@ frame_valor_marmitas.create_link_to_label_var(total_frame.total_value_marmitas)
 
 def update_dinheiro_recebido(event):
     
-    base_str = dinheiro_recebido_frame.value.get()
+    base_str = dinheiro_recebido_frame.get_value()
     base_str = base_str.replace(".", "")
     
     char = event.char
