@@ -110,7 +110,7 @@ def update_dinheiro_recebido(event):
     elif char_name == 'Return' and base_str != "000":
         base_str = "000"
     
-    dinheiro_recebido_frame.value.set(f"{base_str[:-2]}.{base_str[-2:]}")
+    dinheiro_recebido_frame.set_value(f"{base_str[:-2]}.{base_str[-2:]}")
 
 dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
 dinheiro_recebido_frame.focus_set()
