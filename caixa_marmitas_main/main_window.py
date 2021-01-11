@@ -83,4 +83,31 @@ for marmita in tipos_de_marmitas:
 frame_valor_bebidas.create_link_to_label_var(total_frame.total_value_bebidas)
 frame_valor_marmitas.create_link_to_label_var(total_frame.total_value_marmitas)
 
+def update_dinheiro_recebido(event):
+    
+    base_str = dinheiro_recebido_frame.value.get()
+    base_str = base_str.replace(".", "")
+    
+    char = event.char
+    char_name = event.keysym
+
+    if char_name == 'BackSpace':
+        base_str = base_str[:-1]
+
+        if len(base_str) == 2:
+            base_str = "0" + base_str
+
+
+    elif char_name.isdigit() and len(base_str) < 9:
+        if base_str[0] == "0":
+            base_str = base_str[1:]
+            base_str += char
+        else:
+            base_str += char
+
+    elif char_name == 'Return' and base_str != "000":
+        base_str = "000"
+    
+    dinheiro_recebido_frame.value.set(f"{base_str[:-2]}.{base_str[-2:]}")
+
 root_window.mainloop()
