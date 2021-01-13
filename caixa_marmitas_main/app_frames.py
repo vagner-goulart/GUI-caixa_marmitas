@@ -189,6 +189,7 @@ class TrocoFrames(Frame):
         return self.value.get()
 
     def set_value(self, val):
+        val = self.format_new_value(val)
         self.value.set(val)
 
     def update_value_var(self, *args):
