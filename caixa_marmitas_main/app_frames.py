@@ -93,6 +93,16 @@ class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
             self.menu_de_items.config(state=DISABLED)
             self.menu_de_quantidade.config(state=DISABLED)
 
+    def reset_values(self):
+        if self.menu_de_items.get_current_value() != self.menu_de_items.opcoes[0]:
+            self.menu_de_items.current_value.set(self.menu_de_items.opcoes[0])
+        
+        if self.get_quant_from_quantmenu() > 1:
+            self.menu_de_quantidade.set_current_value(1)
+
+        if self.get_checkbox_state() == "sim":
+            self.check_box.deselect()
+
 
 class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
 
@@ -131,6 +141,12 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
         else:
             self.menu_de_quantidade.config(state=DISABLED)
 
+    def reset_values(self):
+        if self.get_quant_from_quantmenu() > 1:
+            self.menu_de_quantidade.current_value.set(1)
+
+        if self.get_checkbox_state() == "sim":
+            self.check_box.deselect()
 
 class PratoDiaFrame(Frame):
 
@@ -190,3 +206,7 @@ class TrocoFrames(Frame):
             val += "0"
 
         return val
+
+    def reset_values(self):
+        if self.get_value() != "0.00":
+            self.set_value(0.00)
