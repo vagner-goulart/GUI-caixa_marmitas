@@ -32,11 +32,11 @@ class CommonMethodsBebidasMarmitas:
 
     def add_traces_to_dropdownmenus(self):
         self.menu_de_quantidade.current_value.trace_add('write', self.update_value_label) # pylint: disable=no-member
- 
+
     def update_value_label(self, v_name=None, *args):
         new_value = self.calculate_new_value(v_name)
         self.value_var_to_update.set(new_value)
- 
+
     def calculate_new_value(self, v_name):
         current_val = self.value_var_to_update.get()
         quant = self.get_quant_from_quantmenu()
@@ -99,7 +99,7 @@ class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
         
         if self.get_quant_from_quantmenu() > 1:
             self.menu_de_quantidade.set_current_value(1)
-
+        
         if self.get_checkbox_state() == "sim":
             self.check_box.deselect()
 
@@ -144,7 +144,7 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
     def reset_values(self):
         if self.get_quant_from_quantmenu() > 1:
             self.menu_de_quantidade.current_value.set(1)
-
+        
         if self.get_checkbox_state() == "sim":
             self.check_box.deselect()
 
