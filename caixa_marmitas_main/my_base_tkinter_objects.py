@@ -32,6 +32,12 @@ class BaseDropdownMenu(OptionMenu):
 
         self.current_value.set(self.opcoes[0])
 
+    def set_current_value(self, val):
+        self.current_value.set(val)
+
+    def get_current_value(self):
+        return self.current_value.get()
+
 
 class BaseDropdownMenuForQuant(OptionMenu):
 
@@ -46,6 +52,8 @@ class BaseDropdownMenuForQuant(OptionMenu):
 
         self.current_value.set(self.quant[0])
 
+    def set_current_value(self, val):
+        self.current_value.set(val)
 
 class FrameDisplayValue(Frame):
 
