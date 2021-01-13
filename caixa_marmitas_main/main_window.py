@@ -65,6 +65,17 @@ pagar_com_cartao_checkbox.grid(sticky=W, padx=(5,0), pady=(10,0), columnspan=3)
 dinheiro_recebido_frame = TrocoFrames(pagamento_frame, "Input")
 troco_do_dinheiro_frame = TrocoFrames(pagamento_frame, "Troco")
 
+botoes_frame = Frame(pagamento_frame, bg='light gray')
+
+botao_terminar = Button(botoes_frame, text="Terminar", font=("SourceSansPro", 12), state=DISABLED)
+botao_cancelar = Button(botoes_frame, text="Cancelar", font=("SourceSansPro", 12))
+botoes_lista = [botao_cancelar, botao_cancelar]
+
+botao_cancelar.grid(row=0, column=0)
+botao_terminar.grid(row=0, column=1, padx=(10, 0))
+
+botoes_frame.grid(columnspan=3, pady=(10,0))
+
 # packing the frame with the objects on the screen
 frame_bebidas_outros.grid(row=0, column=0)
 frame_marmitas.grid(row=0, column=1)
