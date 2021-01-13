@@ -54,7 +54,7 @@ ingredientes_dia = "Arroz, Feijão, Macarrão ao molho vermelho,\nFarofa, Bistec
 prato_dia_frame = PratoDiaFrame(frame_dia_ingredientes, dia_semana, ingredientes_dia)
 
 # bottom right corner (parte do pagamento)
-pagamento_frame = Frame(root_window, width=300, height=300, bg='red')
+pagamento_frame = Frame(root_window, width=300, height=300, bg='gray')
 
 total_frame = TrocoFrames(pagamento_frame, "Total")
 
