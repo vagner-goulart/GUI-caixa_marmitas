@@ -177,7 +177,7 @@ class TrocoFrames(Frame):
             self, textvariable=self.value, bd=2, relief='solid', width=10, anchor=E, font=("SourceSansPro", 20))
         self.value_label.grid(row=0, column=1, sticky=W)
 
-        self.grid(sticky=W, padx=(5,0), pady=(10,0))
+        self.grid(sticky=W, padx=(5,0), pady=(10,0), columnspan=3)
 
         self.total_value_bebidas = DoubleVar()
         self.total_value_marmitas = DoubleVar()
