@@ -10,7 +10,7 @@ from my_base_tkinter_objects import (
 class CommonMethodsBebidasMarmitas:
     """Internal class.
     
-    This class is only for 'BebidasFrames' and 'MarmitasFrames' inheritance only,
+    This class is for 'BebidasFrames' and 'MarmitasFrames' inheritance only,
     as it only has methods used by them both."""
 
     def get_quant_menu_var_name(self):
