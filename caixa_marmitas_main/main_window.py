@@ -137,4 +137,6 @@ def reset_all_values(event):
 dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
 dinheiro_recebido_frame.focus_set()
 
+botao_cancelar.bind('<Button-1>', reset_all_values)
+
 root_window.mainloop()
