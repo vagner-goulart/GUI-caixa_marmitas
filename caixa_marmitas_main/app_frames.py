@@ -20,7 +20,7 @@ class CommonMethodsBebidasMarmitas:
         return self.menu_de_quantidade.current_value.get() # pylint: disable=no-member
 
     def get_checkbox_state(self):
-        return self.check_box.chek_var.get() # pylint: disable=no-member
+        return self.check_box.get_state() # pylint: disable=no-member
 
     @property
     def checkbox_is_active(self):
