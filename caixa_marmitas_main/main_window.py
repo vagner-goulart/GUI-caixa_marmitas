@@ -118,6 +118,38 @@ def update_dinheiro_recebido(event):
         else:
             base_str += char
 
+    # TODO: this 'elif' is too long and hard to understand
+    elif char_name == 'Return' and base_str != "000" and total_frame.get_value() != "0.00":
+
+        total = float(total_frame.get_value())
+        dinheiro_recebido = float(f"{base_str[:-2]}.{base_str[-2:]}")
+        troco = dinheiro_recebido - total
+    
+        if troco < 0:
+            #this will grid the label in the screen if it isn't already there
+            if dinheiro_faltando_label.winfo_manager() == "":
+                dinheiro_faltando_label.grid(column=1, sticky='e')
+
+            #this will grayout the 'terminar' button if it is visible
+            if botao_terminar.cget('state') == 'normal':
+                botao_terminar.config(state=DISABLED)
+            if botao_terminar.cget('bg') == 'lime':
+                botao_terminar.config(bg='#F0F0F0')
+
+            #this will change the value of 'troco' frame to "0.00" if it's diferent than "0.00"
+            if troco_do_dinheiro_frame.get_value() != "0.00":
+                troco_do_dinheiro_frame.set_value("0.00")
+        else:
+            troco_do_dinheiro_frame.set_value(troco)
+            
+            #this will make the 'terminar' button clikcable and the 'cancelar' button red(ish)
+            botao_terminar.config(bg='lime', state=NORMAL)
+            botao_cancelar.config(bg='#ff3333')
+
+            #this will remove the label if it is on the screen
+            if dinheiro_faltando_label.winfo_manager() == 'grid':
+                dinheiro_faltando_label.grid_remove()
+    
 def reset_all_values(event):
 
     frame_bebidas.reset_values()
