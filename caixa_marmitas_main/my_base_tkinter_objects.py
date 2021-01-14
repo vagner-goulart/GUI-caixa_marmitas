@@ -17,6 +17,9 @@ class BaseCheckBox(Checkbutton):
     def load_on_off_images(self, on_img, off_img):
         self.config(image=off_img, selectimage=on_img, indicatoron=False,)
 
+    def get_state(self):
+        return self.chek_var.get()
+
 class BaseDropdownMenu(OptionMenu):
 
     def __init__(self, janela, lista_de_opcoes):
