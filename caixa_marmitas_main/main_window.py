@@ -118,10 +118,21 @@ def update_dinheiro_recebido(event):
         else:
             base_str += char
 
-    elif char_name == 'Return' and base_str != "000":
-        base_str = "000"
-    
-    dinheiro_recebido_frame.set_value(f"{base_str[:-2]}.{base_str[-2:]}")
+def reset_all_values(event):
+
+    frame_bebidas.reset_values()
+    frame_outros.reset_values()
+
+    marm_pequena.reset_values()
+    marm_media.reset_values()
+    marm_grande.reset_values()
+
+    total_frame.reset_values()
+    dinheiro_recebido_frame.reset_values()
+    troco_do_dinheiro_frame.reset_values()
+
+    botao_cancelar.config(bg='#F0F0F0')
+    botao_terminar.config(bg='#F0F0F0', state=DISABLED)
 
 dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
 dinheiro_recebido_frame.focus_set()
