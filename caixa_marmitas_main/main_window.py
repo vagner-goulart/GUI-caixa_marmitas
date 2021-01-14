@@ -96,6 +96,7 @@ frame_valor_marmitas.create_link_to_label_var(total_frame.total_value_marmitas)
 
 dinheiro_faltando_label = Label(dinheiro_recebido_frame, bg="white", text="Quantia Insuficiente!", fg='red')
 
+# TODO: move all functions to the top of the file
 def update_dinheiro_recebido(event):
     
     base_str = dinheiro_recebido_frame.get_value()
