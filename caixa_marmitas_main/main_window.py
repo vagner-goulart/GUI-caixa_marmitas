@@ -150,6 +150,13 @@ def update_dinheiro_recebido(event):
             if dinheiro_faltando_label.winfo_manager() == 'grid':
                 dinheiro_faltando_label.grid_remove()
     
+    #new_val = f"{base_str[:-2]}.{base_str[-2:]}"
+    new_val = "{all_digits_but_the_last_two}.{last_two_digits}".format(
+        all_digits_but_the_last_two=base_str[:-2],
+        last_two_digits=base_str[-2:]
+    )
+    dinheiro_recebido_frame.set_value(new_val)
+
 def reset_all_values(event):
 
     frame_bebidas.reset_values()
