@@ -6,10 +6,10 @@ class BaseCheckBox(Checkbutton):
 
     def __init__(self, janela=None, **kwargs):
         super().__init__(janela, **kwargs)
-        self.chek_var = StringVar()
+        self.check_var = StringVar()
         self.config(
             bg="green",
-            variable=self.chek_var,
+            variable=self.check_var,
             onvalue="sim", offvalue="nao",)
 
         self.deselect()
@@ -18,7 +18,7 @@ class BaseCheckBox(Checkbutton):
         self.config(image=off_img, selectimage=on_img, indicatoron=False,)
 
     def get_state(self):
-        return self.chek_var.get()
+        return self.check_var.get()
 
 class BaseDropdownMenu(OptionMenu):
 

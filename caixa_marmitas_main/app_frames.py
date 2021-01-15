@@ -75,14 +75,14 @@ class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
 
         self.grid(pady=pading, columnspan=3)
 
-        self.check_box.chek_var.trace_add('write', self.grey_out_elements)
+        self.check_box.check_var.trace_add('write', self.grey_out_elements)
 
         self.added_value = 0
         self.previous_quant = self.get_quant_from_quantmenu()
 
     # TODO: esse metodo, assim como o trace_add acima, ta estranho. arruma dps
     def grey_out_elements(self, *args):
-        check_buton_state = self.check_box.chek_var.get()
+        check_buton_state = self.check_box.check_var.get()
         self.update_value_label()
 
         if check_buton_state == "sim":
@@ -124,14 +124,14 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
 
         self.grid(pady=(20,0))
 
-        self.check_box.chek_var.trace_add('write', self.grey_out_elements)
+        self.check_box.check_var.trace_add('write', self.grey_out_elements)
 
         self.added_value = 0
         self.previous_quant = self.get_quant_from_quantmenu()
 
     # TODO: esse metodo, assim como o trace_add acima, ta estranho. arruma dps
     def grey_out_elements(self, *args):
-        check_buton_state = self.check_box.chek_var.get()
+        check_buton_state = self.check_box.check_var.get()
 
         self.update_value_label()
 
