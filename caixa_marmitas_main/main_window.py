@@ -184,6 +184,26 @@ def reset_all_values(event):
     botao_cancelar.config(bg='#F0F0F0')
     botao_terminar.config(bg='#F0F0F0', state=DISABLED)
 
+def pagar_com_cartao(*args):
+    usar_cartao = pagar_com_cartao_checkbox.get_state() == "sim"
+    valor_maior_que_zero = float(total_frame.get_value()) > 0.0
+    
+    if valor_maior_que_zero:
+        if usar_cartao:
+            dinheiro_recebido_frame.unbind('<Key>')
+            dinheiro_recebido_frame.set_value(total_frame.get_value())
+
+            troco_do_dinheiro_frame.set_value("0.00")
+
+            botao_terminar.config(bg='lime', state=NORMAL)
+            botao_cancelar.config(bg='#ff3333')
+        elif not usar_cartao:
+            dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
+            dinheiro_recebido_frame.set_value("0.00")
+
+            botao_terminar.config(bg='#F0F0F0', state=DISABLED)
+            botao_cancelar.config(bg='#F0F0F0')
+
 dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
 dinheiro_recebido_frame.focus_set()
 
