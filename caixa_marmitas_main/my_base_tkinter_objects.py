@@ -20,6 +20,9 @@ class BaseCheckBox(Checkbutton):
     def get_state(self):
         return self.check_var.get()
 
+    def add_trace(self, func):
+        self.check_var.trace_add('write', func)
+
 class BaseDropdownMenu(OptionMenu):
 
     def __init__(self, janela, lista_de_opcoes):
