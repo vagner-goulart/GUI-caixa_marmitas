@@ -175,6 +175,8 @@ def reset_all_values(event):
     marm_media.reset_values()
     marm_grande.reset_values()
 
+    marmita_feijoada.reset_values()
+
     total_frame.reset_values()
     dinheiro_recebido_frame.reset_values()
     troco_do_dinheiro_frame.reset_values()
