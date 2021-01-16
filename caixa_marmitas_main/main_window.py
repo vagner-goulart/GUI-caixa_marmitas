@@ -217,6 +217,10 @@ def grey_out_checkbox_pagar_com_cartao(*args):
         pagar_com_cartao_checkbox.config(state=DISABLED)
 
 total_frame.add_trace(grey_out_checkbox_pagar_com_cartao)
+
+# TODO: find better solution and move this up close to the checkbox creation
+pagar_com_cartao_checkbox.add_trace(pagar_com_cartao)
+
 dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
 dinheiro_recebido_frame.focus_set()
 
