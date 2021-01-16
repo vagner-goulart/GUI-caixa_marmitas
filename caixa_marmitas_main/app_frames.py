@@ -157,10 +157,10 @@ class PratoDiaFrame(Frame):
 
         self.label_titulo_dia_semana = Label(
             janela, text=self.titulo_dia_semana, bg='#E0E0E0', font=("SourceSansPro", 12),)
-        self.label_titulo_dia_semana.pack(pady=(10,5))
+        self.label_titulo_dia_semana.grid(pady=(10,5))
         
         self.label_prato_dia = Label(janela, text=ingredientes, bg='#E0E0E0', font=("SourceSansPro", 11),)
-        self.label_prato_dia.pack()
+        self.label_prato_dia.grid()
 
 
 class TrocoFrames(Frame):
