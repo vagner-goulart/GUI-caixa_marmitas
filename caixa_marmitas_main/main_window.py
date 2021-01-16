@@ -204,6 +204,18 @@ def pagar_com_cartao(*args):
             botao_terminar.config(bg='#F0F0F0', state=DISABLED)
             botao_cancelar.config(bg='#F0F0F0')
 
+def grey_out_checkbox_pagar_com_cartao(*args):
+    val = float(total_frame.get_value())
+
+    if val > 0.0 and pagar_com_cartao_checkbox.cget('state') == 'disabled':
+        pagar_com_cartao_checkbox.config(state=NORMAL)
+    elif val == 0.0:
+        if pagar_com_cartao_checkbox.get_state() == "sim":
+            pagar_com_cartao_checkbox.deselect()
+            dinheiro_recebido_frame.set_value("0.00")
+
+        pagar_com_cartao_checkbox.config(state=DISABLED)
+
 dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
 dinheiro_recebido_frame.focus_set()
 
