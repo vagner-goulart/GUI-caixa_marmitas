@@ -154,6 +154,9 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
         if self.get_checkbox_state() == "sim":
             self.check_box.deselect()
 
+        if hasattr(self, 'check_box_feijoada') and self.check_box_feijoada.get_state() == "sim":
+            self.check_box_feijoada.deselect()
+
 class PratoDiaFrame(Frame):
 
     def __init__(self, janela, dia, ingredientes, **kwargs):
