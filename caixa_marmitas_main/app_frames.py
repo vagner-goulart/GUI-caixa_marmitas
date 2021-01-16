@@ -122,6 +122,10 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
             width=10,)
         self.label_marmita.grid(row=linha, column=2)
 
+        if not nome_marmita == "FEIJOADA":
+            self.check_box_feijoada = BaseCheckBox(self, state=DISABLED)
+            self.check_box_feijoada.grid(row=linha, column=3, padx=(10,10))
+
         self.grid(pady=(20,0))
 
         self.check_box.check_var.trace_add('write', self.grey_out_elements)
