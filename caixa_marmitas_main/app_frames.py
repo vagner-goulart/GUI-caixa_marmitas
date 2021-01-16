@@ -185,6 +185,9 @@ class TrocoFrames(Frame):
         self.total_value_bebidas.trace_add('write', self.update_value_var)
         self.total_value_marmitas.trace_add('write', self.update_value_var)
 
+    def add_trace(self, func):
+        self.value.trace_add('write', func)
+
     def get_value(self):
         return self.value.get()
 
