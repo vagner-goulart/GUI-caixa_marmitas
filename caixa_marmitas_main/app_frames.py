@@ -141,11 +141,13 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
 
         if check_buton_state == "sim":
             self.menu_de_quantidade.config(state=NORMAL)
-            self.check_box_feijoada.config(state=NORMAL)
+            if hasattr(self, 'check_box_feijoada'):
+                self.check_box_feijoada.config(state=NORMAL)
         
         else:
             self.menu_de_quantidade.config(state=DISABLED)
-            self.check_box_feijoada.config(state=DISABLED)
+            if hasattr(self, 'check_box_feijoada'):
+                self.check_box_feijoada.config(state=DISABLED)
 
     def reset_values(self):
         if self.get_quant_from_quantmenu() > 1:
