@@ -105,7 +105,6 @@ class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
         if self.get_checkbox_state() == "sim":
             self.check_box.deselect()
 
-
 class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
 
     def __init__(self, janela, linha, nome_marmita, var_nome, **kwargs):
@@ -176,7 +175,6 @@ class PratoDiaFrame(Frame):
         
         self.label_prato_dia = Label(janela, text=ingredientes, bg='#E0E0E0', font=("SourceSansPro", 11),)
         self.label_prato_dia.grid()
-
 
 class TrocoFrames(Frame):
 
