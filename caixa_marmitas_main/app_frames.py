@@ -44,12 +44,12 @@ class CommonMethodsBebidasMarmitas:
         print(f"c_val= {current_val}\n", f"added_value= {self.added_value}") # pylint: disable=access-member-before-definition
 
         if not self.checkbox_is_active and current_val > 0:
-            self.added_value = -(quant*5.0)
+            self.added_value = -(quant*self.preco) # pylint: disable=no-member
         else:
-            self.added_value = quant*5.0
+            self.added_value = quant*self.preco # pylint: disable=no-member
 
         if v_name == self.get_quant_menu_var_name():
-            self.added_value -= self.previous_quant*5.0 # pylint: disable=access-member-before-definition
+            self.added_value -= self.previous_quant*self.preco # pylint: disable=access-member-before-definition, no-member
 
         self.previous_quant = self.get_quant_from_quantmenu()
         print(f"c_val= {current_val}\n", f"added_value= {self.added_value}")
@@ -64,6 +64,8 @@ class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
     def __init__(self, janela, linha, pading, lista_d_items, var_nome, **kwargs):
         super().__init__(janela,bg='red', **kwargs)
         
+        self.preco = 5.0
+
         self.check_box = BaseCheckBox(self)
         self.check_box.grid(row=linha, column=0)
 
@@ -109,6 +111,8 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
     def __init__(self, janela, linha, nome_marmita, var_nome, **kwargs):
         super().__init__(janela, **kwargs)
         self.config(bg=None, bd=1, relief='raised')
+
+        self.preco = 5.0
 
         self.check_box = BaseCheckBox(self)
         self.check_box.grid(row=linha, column=0)
