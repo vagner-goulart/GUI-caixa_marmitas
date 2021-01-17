@@ -62,7 +62,7 @@ class CommonMethodsBebidasMarmitas:
 class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
 
     def __init__(self, janela, linha, pading, lista_d_items, var_nome, **kwargs):
-        super().__init__(janela,bg='red', **kwargs)        
+        super().__init__(janela,bg='red', **kwargs)
         
         self.check_box = BaseCheckBox(self)
         self.check_box.grid(row=linha, column=0)
