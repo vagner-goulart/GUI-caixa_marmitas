@@ -160,8 +160,19 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
         if self.get_checkbox_state() == "sim":
             self.check_box.deselect()
 
-        if hasattr(self, 'check_box_feijoada') and self.check_box_feijoada.get_state() == "sim":
-            self.check_box_feijoada.deselect()
+    def add_feijoada_value(self, *args):
+        val = self.get_quant_from_quantmenu() * 2.0
+
+        if self.check_box_feijoada.get_state() == "sim":
+            self.preco += 2.0
+
+            self.value_var_to_update.set(self.value_var_to_update.get() + val)
+            self.added_value += val
+        else:
+            self.preco -= 2.0
+
+            self.value_var_to_update.set(self.value_var_to_update.get() - val)
+            self.added_value -= val
 
 class PratoDiaFrame(Frame):
 
