@@ -130,6 +130,8 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
             self.check_box_feijoada = BaseCheckBox(self, state=DISABLED)
             self.check_box_feijoada.grid(row=linha, column=3, padx=(10,10))
 
+            self.check_box_feijoada.add_trace(self.add_feijoada_value)
+
         self.grid(pady=(20,0))
 
         self.check_box.check_var.trace_add('write', self.grey_out_elements)
