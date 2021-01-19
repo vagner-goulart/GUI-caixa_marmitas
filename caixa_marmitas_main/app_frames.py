@@ -40,8 +40,8 @@ class CommonMethodsBebidasMarmitas:
     def calculate_new_value(self, v_name):
         current_val = self.value_var_to_update.get()
         quant = self.get_quant_from_quantmenu()
-
-        print(f"c_val= {current_val}\n", f"added_value= {self.added_value}") # pylint: disable=access-member-before-definition
+        
+        print(f"c_val= {current_val}, ", f"added_value= {self.added_value}") # pylint: disable=access-member-before-definition
 
         if not self.checkbox_is_active and current_val > 0:
             self.added_value = -(quant*self.preco) # pylint: disable=no-member
@@ -52,9 +52,10 @@ class CommonMethodsBebidasMarmitas:
             self.added_value -= self.previous_quant*self.preco # pylint: disable=access-member-before-definition, no-member
 
         self.previous_quant = self.get_quant_from_quantmenu()
-        print(f"c_val= {current_val}\n", f"added_value= {self.added_value}")
-        print(v_name)
-        print(self.get_quant_menu_var_name())
+        print(f"c_val= {current_val}, ", f"added_value= {self.added_value}")
+        # print(v_name)
+        # print(self.get_quant_menu_var_name())
+        print()
 
         return self.added_value + current_val
 
