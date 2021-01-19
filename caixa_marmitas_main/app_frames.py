@@ -134,7 +134,7 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
 
         self.check_box.check_var.trace_add('write', self.grey_out_elements)
 
-        self.added_value = 0
+        self.added_value = 0.0
         self.previous_quant = self.get_quant_from_quantmenu()
 
     # TODO: esse metodo, assim como o trace_add acima, ta estranho. arruma dps
