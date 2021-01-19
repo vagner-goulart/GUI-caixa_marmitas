@@ -62,10 +62,10 @@ class CommonMethodsBebidasMarmitas:
 
 class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
 
-    def __init__(self, janela, linha, pading, lista_d_items, var_nome, **kwargs):
+    def __init__(self, janela, linha, pading, lista_d_items, var_nome, preco, **kwargs):
         super().__init__(janela,bg='red', **kwargs)
         
-        self.preco = 5.0
+        self.preco = preco
 
         self.check_box = BaseCheckBox(self)
         self.check_box.grid(row=linha, column=0)
@@ -108,11 +108,11 @@ class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
 
 class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
 
-    def __init__(self, janela, linha, nome_marmita, var_nome, **kwargs):
+    def __init__(self, janela, linha, nome_marmita, var_nome, preco, **kwargs):
         super().__init__(janela, **kwargs)
         self.config(bg=None, bd=1, relief='raised')
 
-        self.preco = 5.0
+        self.preco = preco
 
         self.check_box = BaseCheckBox(self)
         self.check_box.grid(row=linha, column=0)
