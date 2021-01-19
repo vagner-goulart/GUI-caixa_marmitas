@@ -8,7 +8,7 @@ class BaseCheckBox(Checkbutton):
         super().__init__(janela, **kwargs)
         self.check_var = StringVar()
         self.config(
-            bg="green",
+            bg="light green",
             variable=self.check_var,
             onvalue="sim", offvalue="nao",)
 
