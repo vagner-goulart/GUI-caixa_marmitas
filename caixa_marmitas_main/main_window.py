@@ -148,7 +148,7 @@ def update_dinheiro_recebido(event):
             if troco_do_dinheiro_frame.get_value() != "0.00":
                 troco_do_dinheiro_frame.set_value("0.00")
         else:
-            troco_do_dinheiro_frame.set_value(troco)
+            troco_do_dinheiro_frame.set_value(round(troco, 2))
             
             #this will make the 'terminar' button clikcable and the 'cancelar' button red(ish)
             botao_terminar.config(bg='lime', state=NORMAL)
