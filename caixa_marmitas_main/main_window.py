@@ -177,7 +177,7 @@ def reset_all_values(event=None):
     marm_media.reset_values()
     marm_grande.reset_values()
 
-    marmita_feijoada.reset_values()
+    marm_feijoada.reset_values()
 
     total_frame.reset_values()
     dinheiro_recebido_frame.reset_values()
