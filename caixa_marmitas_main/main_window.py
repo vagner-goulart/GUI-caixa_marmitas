@@ -7,6 +7,8 @@ from PIL import ImageTk, Image
 from my_base_tkinter_objects import FrameDisplayValue, BaseCheckBox
 from app_frames import BebidasFrames, MarmitasFrames, PratoDiaFrame, TrocoFrames
 
+from pprint import pprint
+
 root_window = Tk()
 root_window.geometry('600x600+600+50')
 
