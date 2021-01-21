@@ -167,7 +167,7 @@ def update_dinheiro_recebido(event):
     )
     dinheiro_recebido_frame.set_value(new_val)
 
-def reset_all_values(event):
+def reset_all_values(event=None):
     pagar_com_cartao_checkbox.check_var.set("nao")
 
     frame_bebidas.reset_values()
