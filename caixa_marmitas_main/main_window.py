@@ -218,6 +218,39 @@ def grey_out_checkbox_pagar_com_cartao(*args):
 
         pagar_com_cartao_checkbox.config(state=DISABLED)
 
+def coletar_iformacoes_da_venda(*args):
+    vendas = {
+        "Bebidas":None,
+        "Outros":None,
+        "Marmitas":{
+            "Pequena":None,
+            "Media":None,
+            "Grande":None,
+            "Feijoada":None
+        }
+    }
+
+    vendeu_bebida = frame_bebidas.get_checkbox_state() == "sim"
+    vendeu_outro = frame_outros.get_checkbox_state() == "sim"
+
+    vendeu_marmita_pequena = marm_pequena.get_checkbox_state() == "sim"
+    vendeu_marmita_media   = marm_media.get_checkbox_state() == "sim"
+    vendeu_marmita_grande  = marm_grande.get_checkbox_state() == "sim"
+
+    vendeu_feijoada = marm_feijoada.get_checkbox_state == "sim"
+
+    if vendeu_bebida:
+        vendido = "{quantidade} | {item}".format(
+            item=frame_bebidas.menu_de_items.current_value.get(),
+            quantidade=frame_bebidas.get_quant_from_quantmenu()
+            )
+
+        vendas["Bebidas"] = str(vendido)
+
+    pprint(vendas)
+
+    reset_all_values()
+
 total_frame.add_trace(grey_out_checkbox_pagar_com_cartao)
 
 # TODO: find better solution and move this up close to the checkbox creation
