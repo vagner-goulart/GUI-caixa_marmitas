@@ -259,6 +259,7 @@ pagar_com_cartao_checkbox.add_trace(pagar_com_cartao)
 dinheiro_recebido_frame.bind('<Key>', update_dinheiro_recebido)
 dinheiro_recebido_frame.focus_set()
 
-botao_cancelar.bind('<Button-1>', reset_all_values)
+botao_cancelar.config(command=reset_all_values)
+botao_terminar.config(command=coletar_iformacoes_da_venda)
 
 root_window.mainloop()
