@@ -55,10 +55,10 @@ ingredientes_dia = "Arroz, Feijão, Macarrão ao molho vermelho,\nFarofa, Bistec
 
 prato_dia_frame = PratoDiaFrame(frame_dia_ingredientes, dia_semana, ingredientes_dia)
 
-marmita_feijoada = MarmitasFrames(frame_dia_ingredientes, 1, "FEIJOADA", "feijoada", 30.0)
+marm_feijoada = MarmitasFrames(frame_dia_ingredientes, 1, "FEIJOADA", "feijoada", 30.0)
 
-marmita_feijoada.link_var_to_frame(frame_valor_marmitas)
-marmita_feijoada.add_traces_to_dropdownmenus()
+marm_feijoada.link_var_to_frame(frame_valor_marmitas)
+marm_feijoada.add_traces_to_dropdownmenus()
 
 # bottom right corner (parte do pagamento)
 pagamento_frame = Frame(root_window, width=300, height=300, bg='gray')
