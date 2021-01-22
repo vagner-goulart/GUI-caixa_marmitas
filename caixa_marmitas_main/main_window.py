@@ -225,10 +225,11 @@ def coletar_iformacoes_da_venda(*args):
         "Marmitas":{
             "Pequena":None,
             "Media":None,
-            "Grande":None,
-            "Feijoada":None
-        }
+            "Grande":None
+        },
+        "Feijoada":None
     }
+
 
     vendeu_bebida = frame_bebidas.get_checkbox_state() == "sim"
     vendeu_outro = frame_outros.get_checkbox_state() == "sim"
