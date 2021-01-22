@@ -239,6 +239,13 @@ def coletar_iformacoes_da_venda(*args):
     vendeu_marmita_grande  = marm_grande.get_checkbox_state() == "sim"
     vendeu_marmita = vendeu_marmita_pequena or vendeu_marmita_media or vendeu_marmita_grande
 
+    marmitas_info = {
+        # TODO: "Pequena":{"object_address":marm_pequena, "sold_bool":vendeu_marmita_pequena} do something like this later
+        "Pequena":[marm_pequena, vendeu_marmita_pequena],
+        "Media":[marm_media, vendeu_marmita_media],
+        "Grande":[marm_grande, vendeu_marmita_grande]
+    }
+
     vendeu_feijoada = marm_feijoada.get_checkbox_state == "sim"
 
     if vendeu_bebida:
