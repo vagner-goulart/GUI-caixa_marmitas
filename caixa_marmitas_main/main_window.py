@@ -284,6 +284,13 @@ def coletar_iformacoes_da_venda(*args):
                 
                 vendas["Marmitas"][tipo_marmita] = vendido
 
+    if vendeu_feijoada:
+        vendido = dict(
+            quantidade=marm_feijoada.get_quant_from_quantmenu()
+        )
+
+        vendas["Feijoada"] = vendido
+
     pprint(vendas)
 
     reset_all_values()
