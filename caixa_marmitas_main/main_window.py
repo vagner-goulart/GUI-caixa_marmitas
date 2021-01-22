@@ -264,7 +264,25 @@ def coletar_iformacoes_da_venda(*args):
 
         vendas["Outros"] = vendido
 
-        vendas["Bebidas"] = str(vendido)
+    if vendeu_marmita:
+
+        for marmita_info in marmitas_info.items():
+            tipo_marmita   = marmita_info[0]
+            marmita_object = marmita_info[1][0]
+            vendeu_marmita = marmita_info[1][1]
+            
+            if vendeu_marmita:
+                if hasattr(marmita_object, 'check_box_feijoada'):
+                    feij = marmita_object.check_box_feijoada.get_state()
+                else:
+                    feij = None
+
+                vendido = dict(
+                    quantidade=marmita_object.get_quant_from_quantmenu(),
+                    feijoada=feij
+                    )
+                
+                vendas["Marmitas"][tipo_marmita] = vendido
 
     pprint(vendas)
 
