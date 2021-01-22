@@ -241,10 +241,20 @@ def coletar_iformacoes_da_venda(*args):
     vendeu_feijoada = marm_feijoada.get_checkbox_state == "sim"
 
     if vendeu_bebida:
-        vendido = "{quantidade} | {item}".format(
-            item=frame_bebidas.menu_de_items.current_value.get(),
-            quantidade=frame_bebidas.get_quant_from_quantmenu()
+        vendido = dict(
+            quantidade=frame_bebidas.get_quant_from_quantmenu(),
+            item=frame_bebidas.menu_de_items.current_value.get()
+        )
+
+        vendas["Bebidas"] = vendido
+
+    if vendeu_outro:
+        vendido = dict(
+            item=frame_outros.menu_de_items.current_value.get(),
+            quantidade=frame_outros.get_quant_from_quantmenu()
             )
+
+        vendas["Outros"] = vendido
 
         vendas["Bebidas"] = str(vendido)
 
