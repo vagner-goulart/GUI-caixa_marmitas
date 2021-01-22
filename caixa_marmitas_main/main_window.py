@@ -246,7 +246,7 @@ def coletar_iformacoes_da_venda(*args):
         "Grande":[marm_grande, vendeu_marmita_grande]
     }
 
-    vendeu_feijoada = marm_feijoada.get_checkbox_state == "sim"
+    vendeu_feijoada = marm_feijoada.get_checkbox_state() == "sim"
 
     if vendeu_bebida:
         vendido = dict(
