@@ -236,6 +236,7 @@ def coletar_iformacoes_da_venda(*args):
     vendeu_marmita_pequena = marm_pequena.get_checkbox_state() == "sim"
     vendeu_marmita_media   = marm_media.get_checkbox_state() == "sim"
     vendeu_marmita_grande  = marm_grande.get_checkbox_state() == "sim"
+    vendeu_marmita = vendeu_marmita_pequena or vendeu_marmita_media or vendeu_marmita_grande
 
     vendeu_feijoada = marm_feijoada.get_checkbox_state == "sim"
 
