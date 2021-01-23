@@ -7,3 +7,6 @@ def get_today_weekday():
 
 def get_formated_day_info():
     return today_data.strftime('%d/%m/%Y - %H:%M')
+
+def get_current_time():
+    return datetime.now().strftime('%H:%M')
