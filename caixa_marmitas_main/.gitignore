@@ -2,3 +2,7 @@ tempCodeRunnerFile.py
 __pycache__/
 *.png
 notas.txt
+build
+dist
+main_window.exe
+main_window.spec
