@@ -137,7 +137,11 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
 
             self.check_box_feijoada.add_trace(self.add_feijoada_value)
 
-        self.grid(pady=(20,0))
+        # TODO: this is totaly temporary, i'll find a better solution
+        if nome_marmita == "FEIJOADA" and today != "Saturday":
+            pass
+        else:
+            self.grid(pady=(20,0))
 
         self.check_box.check_var.trace_add('write', self.grey_out_elements)
 
