@@ -221,7 +221,7 @@ def grey_out_checkbox_pagar_com_cartao(*args):
         pagar_com_cartao_checkbox.config(state=DISABLED)
 
 def coletar_iformacoes_da_venda(*args):
-    vendas = {
+    produtos_vendidos = {
         "Bebidas":None,
         "Outros":None,
         "Marmitas":{
@@ -256,7 +256,7 @@ def coletar_iformacoes_da_venda(*args):
             item=frame_bebidas.menu_de_items.current_value.get()
         )
 
-        vendas["Bebidas"] = vendido
+        produtos_vendidos["Bebidas"] = vendido
 
     if vendeu_outro:
         vendido = dict(
@@ -264,7 +264,7 @@ def coletar_iformacoes_da_venda(*args):
             quantidade=frame_outros.get_quant_from_quantmenu()
             )
 
-        vendas["Outros"] = vendido
+        produtos_vendidos["Outros"] = vendido
 
     if vendeu_marmita:
 
@@ -284,14 +284,14 @@ def coletar_iformacoes_da_venda(*args):
                     feijoada=feij
                     )
                 
-                vendas["Marmitas"][tipo_marmita] = vendido
+                produtos_vendidos["Marmitas"][tipo_marmita] = vendido
 
     if vendeu_feijoada:
         vendido = dict(
             quantidade=marm_feijoada.get_quant_from_quantmenu()
         )
 
-        vendas["Feijoada"] = vendido
+        produtos_vendidos["Feijoada"] = vendido
 
     pprint(vendas)
 
