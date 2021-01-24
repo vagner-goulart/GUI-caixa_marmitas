@@ -10,3 +10,6 @@ def get_formated_day_info():
 
 def get_current_time():
     return datetime.now().strftime('%H:%M')
+
+def get_today_date():
+    return today_data.strftime('%d/%m/%y')
