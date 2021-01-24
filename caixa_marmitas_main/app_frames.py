@@ -7,6 +7,10 @@ from my_base_tkinter_objects import (
     BaseCheckBox, BaseDropdownMenu,
     BaseDropdownMenuForQuant, FrameDisplayValue)
 
+import date_and_time as dt
+
+today = dt.get_today_weekday()
+
 class CommonMethodsBebidasMarmitas:
     """Internal class.
     
