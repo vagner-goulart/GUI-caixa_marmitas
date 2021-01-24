@@ -7,6 +7,7 @@ from PIL import ImageTk, Image
 from my_base_tkinter_objects import FrameDisplayValue, BaseCheckBox
 from app_frames import BebidasFrames, MarmitasFrames, PratoDiaFrame, TrocoFrames
 
+import date_and_time as dt
 from pprint import pprint
 
 root_window = Tk()
@@ -17,6 +18,7 @@ root_window.geometry('600x600+600+50')
 on_image = ImageTk.PhotoImage(Image.open("caixa_marmitas_main/13x13_on_img.png"))
 off_image = ImageTk.PhotoImage(Image.open("caixa_marmitas_main/13x13_off_img.png"))
 
+today = dt.get_today_weekday()
 
 # creating the frames that will go into the main window
 
