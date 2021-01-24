@@ -293,7 +293,12 @@ def coletar_iformacoes_da_venda(*args):
 
         produtos_vendidos["Feijoada"] = vendido
 
-    pprint(vendas)
+    vendas_info = {
+        "Vendas":produtos_vendidos,
+        "Dia_da_semana":dt.get_today_weekday(),
+        "Data":dt.get_today_date(),
+        "Horario":dt.get_current_time()
+    }
 
     reset_all_values()
 
