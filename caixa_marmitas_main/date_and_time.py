@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date # 'date' is being imported here for debugging purposes only. TODO: remove later
 
 today_data = datetime.now()
 
