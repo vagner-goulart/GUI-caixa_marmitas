@@ -8,6 +8,7 @@ from my_base_tkinter_objects import FrameDisplayValue, BaseCheckBox
 from app_frames import BebidasFrames, MarmitasFrames, PratoDiaFrame, TrocoFrames
 
 import date_and_time as dt
+from ingredientes_marmitas import get_today_ingredients
 from pprint import pprint
 
 root_window = Tk()
