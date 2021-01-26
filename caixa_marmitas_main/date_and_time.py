@@ -3,6 +3,18 @@ from datetime import datetime, date # 'date' is being imported here for debuggin
 today_data = datetime.now()
 today_data = date(2021, 1, 30) # this is being used here for debugging purposes only. TODO: remove later
 
+dias_semana_PT = ['SEGUNDA', 'TERÇA', 'QUARTA', 'QUINTA', 'SEXTA', 'SÁBADO']
+dias_semana_ENG = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+dias_semana_ENG_to_PT_dict = {
+    'Monday': 'SEGUNDA',
+    'Tuesday': 'TERÇA',
+    'Wednesday': 'QUARTA',
+    'Thursday': 'QUINTA',
+    'Friday': 'SEXTA',
+    'Saturday': 'SÁBADO',
+    'Sunday': 'DOMINGO'
+    }
 
 def get_today_weekday():
     return today_data.strftime('%A')
