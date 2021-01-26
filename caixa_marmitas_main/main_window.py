@@ -54,6 +54,7 @@ frame_valor_marmitas.grid(pady=(15,0))
 frame_dia_ingredientes = Frame(root_window ,width=200, height=200 ,bg="#E0E0E0", bd=2)
 
 dia_semana = dt.get_today_weekday_in_PT()
+ingredientes_dia = get_today_ingredients()
 
 prato_dia_frame = PratoDiaFrame(frame_dia_ingredientes, dia_semana, ingredientes_dia)
 
