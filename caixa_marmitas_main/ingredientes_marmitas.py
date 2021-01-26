@@ -38,3 +38,12 @@ sabado = (
     "marmita com feijoada")
 
 domingo = "Nenhum."
+ingredientes_do_dia = {
+    "SEGUNDA":segunda,
+    "TERÇA":terca,
+    "QUARTA":quarta,
+    "QUINTA":quinta,
+    "SEXTA":sexta,
+    "SÁBADO":sabado,
+    "DOMINGO":domingo
+}
