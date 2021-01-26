@@ -38,6 +38,9 @@ sabado = (
     "marmita com feijoada")
 
 domingo = "Nenhum."
+
+# ingredientes_do_dia = [segunda, terca, quarta, quinta, sexta, sabado]
+
 ingredientes_do_dia = {
     "SEGUNDA":segunda,
     "TERÇA":terca,
@@ -47,3 +50,6 @@ ingredientes_do_dia = {
     "SÁBADO":sabado,
     "DOMINGO":domingo
 }
+
+def get_today_ingredients():
+    return ingredientes_do_dia[dt.get_today_weekday_in_PT()]
