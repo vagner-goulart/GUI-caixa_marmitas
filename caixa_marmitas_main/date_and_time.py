@@ -27,3 +27,6 @@ def get_current_time():
 
 def get_today_date():
     return today_data.strftime('%d/%m/%y')
+
+def get_today_weekday_in_PT():
+    return dias_semana_ENG_to_PT_dict[get_today_weekday()]
