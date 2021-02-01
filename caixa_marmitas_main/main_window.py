@@ -34,7 +34,7 @@ frame_bebidas_um = BebidasFrames(frame_bebidas_outros, 0, (10,10), lista_bebidas
 frame_bebidas_dois = BebidasFrames(frame_bebidas_outros, 1, (10,0), lista_bebidas, "bebidas_dois", 5.0)
 
 lista_outros = ["Halls", "Trident", "Bala"]
-frame_outros = BebidasFrames(frame_bebidas_outros, 1, (20, 10), lista_outros, "outros", 5.0)
+frame_outros = BebidasFrames(frame_bebidas_outros, 2, (20, 10), lista_outros, "outros", 5.0)
 
 frame_bebidas_um.check_box.load_on_off_images(on_image, off_image)
 frame_bebidas_dois.check_box.load_on_off_images(on_image, off_image)
