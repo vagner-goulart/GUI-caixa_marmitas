@@ -29,12 +29,12 @@ frame_bebidas_outros.config(bg='blue', borderwidth=1, relief='solid')
 frame_bebidas_outros.columnconfigure(0, weight=1)
 
 lista_bebidas = ["Água", "CocaCola", "Pepsi"]
-frame_bebidas = BebidasFrames(frame_bebidas_outros, 0, (10,20), lista_bebidas, "bebidas", 5.0)
+frame_bebidas_um = BebidasFrames(frame_bebidas_outros, 0, (10,10), lista_bebidas, "bebidas_um", 5.0)
 
 lista_outros = ["Halls", "Trident", "Bala"]
 frame_outros = BebidasFrames(frame_bebidas_outros, 1, (20, 10), lista_outros, "outros", 5.0)
 
-frame_bebidas.check_box.load_on_off_images(on_image, off_image)
+frame_bebidas_um.check_box.load_on_off_images(on_image, off_image)
 frame_outros.check_box.load_on_off_images(on_image, off_image)
 
 frame_valor_bebidas = FrameDisplayValue(frame_bebidas_outros, "0.00")
@@ -93,8 +93,8 @@ frame_marmitas.grid(row=0, column=1)
 frame_dia_ingredientes.grid(row=1, column=0)
 pagamento_frame.grid(row=1, column=1)
 
-frame_bebidas.link_var_to_frame(frame_valor_bebidas)
-frame_bebidas.add_traces_to_dropdownmenus()
+frame_bebidas_um.link_var_to_frame(frame_valor_bebidas)
+frame_bebidas_um.add_traces_to_dropdownmenus()
 frame_outros.link_var_to_frame(frame_valor_bebidas)
 frame_outros.add_traces_to_dropdownmenus()
 
@@ -174,7 +174,7 @@ def update_dinheiro_recebido(event):
 def reset_all_values(event=None):
     pagar_com_cartao_checkbox.check_var.set("nao")
 
-    frame_bebidas.reset_values()
+    frame_bebidas_um.reset_values()
     frame_outros.reset_values()
 
     marm_pequena.reset_values()
@@ -235,7 +235,7 @@ def coletar_iformacoes_da_venda(*args):
     }
 
 
-    vendeu_bebida = frame_bebidas.get_checkbox_state() == "sim"
+        frame_bebidas_um.get_checkbox_state() == "sim" or
     vendeu_outro = frame_outros.get_checkbox_state() == "sim"
 
     vendeu_marmita_pequena = marm_pequena.get_checkbox_state() == "sim"
@@ -253,10 +253,10 @@ def coletar_iformacoes_da_venda(*args):
     vendeu_feijoada = marm_feijoada.get_checkbox_state() == "sim"
 
     if vendeu_bebida:
+        if frame_bebidas_um.get_checkbox_state() == "sim":
         vendido = dict(
-            quantidade=frame_bebidas.get_quant_from_quantmenu(),
-            item=frame_bebidas.menu_de_items.current_value.get()
-        )
+                quantidade=frame_bebidas_um.get_quant_from_quantmenu(),
+                item=frame_bebidas_um.menu_de_items.current_value.get()
 
         produtos_vendidos["Bebidas"] = vendido
 
