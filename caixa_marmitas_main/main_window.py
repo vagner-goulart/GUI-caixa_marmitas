@@ -56,7 +56,8 @@ frame_valor_marmitas = FrameDisplayValue(frame_marmitas)
 frame_valor_marmitas.grid(pady=(15,0))
 
 # bottom left corner (parte do prato do dia)
-frame_dia_ingredientes = Frame(root_window ,width=200, height=200 ,bg="#E0E0E0", bd=2)
+frame_dia_ingredientes = Frame(root_window ,width=330, height=250 ,bg="green", borderwidth=1, relief='solid')
+frame_dia_ingredientes.columnconfigure(0, weight=1)
 
 dia_semana = dt.get_today_weekday_in_PT()
 ingredientes_dia = get_today_ingredients()
