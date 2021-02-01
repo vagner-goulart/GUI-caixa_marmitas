@@ -198,11 +198,13 @@ class PratoDiaFrame(Frame):
         self.titulo_dia_semana = "PRATO DO DIA - {}".format(dia)
 
         self.label_titulo_dia_semana = Label(
-            janela, text=self.titulo_dia_semana, bg='#E0E0E0', font=("SourceSansPro", 12),)
-        self.label_titulo_dia_semana.grid(pady=(10,5))
+            self, text=self.titulo_dia_semana, bg='#E0E0E0', font=("SourceSansPro", 12),)
+        self.label_titulo_dia_semana.grid(pady=(10,10))
         
-        self.label_prato_dia = Label(janela, text=ingredientes, bg='#E0E0E0', font=("SourceSansPro", 11),)
+        self.label_prato_dia = Label(self, text=ingredientes, bg='#E0E0E0', font=("SourceSansPro", 11),)
         self.label_prato_dia.grid()
+
+        self.grid()
 
 class TrocoFrames(Frame):
 
