@@ -24,8 +24,9 @@ today = dt.get_today_weekday()
 # creating the frames that will go into the main window
 
 # top left corner (parte das bebidas)
-frame_bebidas_outros = Frame(root_window, width=300, height=30)
-frame_bebidas_outros.config(bg="blue")
+frame_bebidas_outros = Frame(root_window, width=330, height=200)
+frame_bebidas_outros.config(bg='blue', borderwidth=1, relief='solid')
+frame_bebidas_outros.columnconfigure(0, weight=1)
 
 lista_bebidas = ["Água", "CocaCola", "Pepsi"]
 frame_bebidas = BebidasFrames(frame_bebidas_outros, 0, (10,20), lista_bebidas, "bebidas", 5.0)
