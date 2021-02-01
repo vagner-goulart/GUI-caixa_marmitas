@@ -63,7 +63,7 @@ class BaseDropdownMenuForQuant(OptionMenu):
 
 class FrameDisplayValue(Frame):
 
-    def __init__(self, janela, valor=0.00):
+    def __init__(self, janela, valor=0.0):
         super().__init__(janela, bg=None)
 
         self.value_var = DoubleVar(self, value=valor)
