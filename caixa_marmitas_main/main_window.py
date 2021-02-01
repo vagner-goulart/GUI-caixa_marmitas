@@ -99,6 +99,10 @@ frame_marmitas.grid(row=0, column=1)
 frame_dia_ingredientes.grid(row=1, column=0)
 pagamento_frame.grid(row=1, column=1)
 
+# TODO: this is kinda bad. fix later
+for frame in [frame_bebidas_outros, frame_marmitas, frame_dia_ingredientes, pagamento_frame]:
+    frame.grid_propagate(False)
+
 frame_bebidas_um.link_var_to_frame(frame_valor_bebidas)
 frame_bebidas_um.add_traces_to_dropdownmenus()
 
