@@ -40,8 +40,7 @@ frame_bebidas_um.check_box.load_on_off_images(on_image, off_image)
 frame_bebidas_dois.check_box.load_on_off_images(on_image, off_image)
 frame_outros.check_box.load_on_off_images(on_image, off_image)
 
-frame_valor_bebidas = FrameDisplayValue(frame_bebidas_outros, "0.00")
-frame_valor_bebidas.grid(column=1, pady=(10,0))
+frame_valor_bebidas = FrameDisplayValue(frame_bebidas_outros, "0.0")
 
 # top right corner (parte das marmitas)
 frame_marmitas = Frame(root_window, width=250, height=250, bg="#E0E0E0")
