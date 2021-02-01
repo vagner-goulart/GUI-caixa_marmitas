@@ -77,7 +77,7 @@ total_frame = TrocoFrames(pagamento_frame, "Total")
 
 pagar_com_cartao_checkbox = BaseCheckBox(pagamento_frame)
 pagar_com_cartao_checkbox.config(text="Pagar com cartão", font=("SourceSansPro", 15), state=DISABLED)
-pagar_com_cartao_checkbox.grid(sticky=W, padx=(5,0), pady=(10,0), columnspan=3)
+pagar_com_cartao_checkbox.grid(padx=(5,0), pady=(10,0), columnspan=3)
 
 dinheiro_recebido_frame = TrocoFrames(pagamento_frame, "Input")
 troco_do_dinheiro_frame = TrocoFrames(pagamento_frame, "Troco")
