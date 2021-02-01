@@ -44,7 +44,8 @@ frame_valor_bebidas = FrameDisplayValue(frame_bebidas_outros, "0.0")
 frame_valor_bebidas.grid(pady=(10,0))
 
 # top right corner (parte das marmitas)
-frame_marmitas = Frame(root_window, width=250, height=250, bg="#E0E0E0")
+frame_marmitas = Frame(root_window, width=300, height=200, bg="green", borderwidth=1, relief='solid')
+frame_marmitas.columnconfigure(0, weight=1)
 
 marm_pequena = MarmitasFrames(frame_marmitas, 0, "PEQUENA", "marm_pequena", 5.0)
 marm_media = MarmitasFrames(frame_marmitas, 1, "MEDIA", "marm_media", 5.0)
