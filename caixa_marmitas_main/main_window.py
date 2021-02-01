@@ -31,10 +31,13 @@ frame_bebidas_outros.columnconfigure(0, weight=1)
 lista_bebidas = ["Água", "CocaCola", "Pepsi"]
 frame_bebidas_um = BebidasFrames(frame_bebidas_outros, 0, (10,10), lista_bebidas, "bebidas_um", 5.0)
 
+frame_bebidas_dois = BebidasFrames(frame_bebidas_outros, 1, (10,0), lista_bebidas, "bebidas_dois", 5.0)
+
 lista_outros = ["Halls", "Trident", "Bala"]
 frame_outros = BebidasFrames(frame_bebidas_outros, 1, (20, 10), lista_outros, "outros", 5.0)
 
 frame_bebidas_um.check_box.load_on_off_images(on_image, off_image)
+frame_bebidas_dois.check_box.load_on_off_images(on_image, off_image)
 frame_outros.check_box.load_on_off_images(on_image, off_image)
 
 frame_valor_bebidas = FrameDisplayValue(frame_bebidas_outros, "0.00")
@@ -95,6 +98,10 @@ pagamento_frame.grid(row=1, column=1)
 
 frame_bebidas_um.link_var_to_frame(frame_valor_bebidas)
 frame_bebidas_um.add_traces_to_dropdownmenus()
+
+frame_bebidas_dois.link_var_to_frame(frame_valor_bebidas)
+frame_bebidas_dois.add_traces_to_dropdownmenus()
+
 frame_outros.link_var_to_frame(frame_valor_bebidas)
 frame_outros.add_traces_to_dropdownmenus()
 
@@ -175,6 +182,7 @@ def reset_all_values(event=None):
     pagar_com_cartao_checkbox.check_var.set("nao")
 
     frame_bebidas_um.reset_values()
+    frame_bebidas_dois.reset_values()
     frame_outros.reset_values()
 
     marm_pequena.reset_values()
