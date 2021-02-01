@@ -12,7 +12,7 @@ from ingredientes_marmitas import get_today_ingredients
 from pprint import pprint
 
 root_window = Tk()
-root_window.geometry('600x600+600+50')
+root_window.geometry('630x450+600+50')
 
 # the img being open here is in the same dir as the main_window.py file,
 # the problem is with vscode that doesn't recognize that. idkw
