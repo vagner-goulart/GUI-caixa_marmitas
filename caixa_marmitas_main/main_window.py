@@ -91,7 +91,7 @@ botoes_lista = [botao_cancelar, botao_cancelar]
 botao_cancelar.grid(row=0, column=0)
 botao_terminar.grid(row=0, column=1, padx=(10, 0))
 
-botoes_frame.grid(columnspan=3, pady=(10,0))
+botoes_frame.grid(pady=(10,0))
 
 # packing the frame with the objects on the screen
 frame_bebidas_outros.grid(row=0, column=0)
