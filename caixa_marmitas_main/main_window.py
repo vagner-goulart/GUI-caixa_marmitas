@@ -253,7 +253,10 @@ def coletar_iformacoes_da_venda(*args):
     }
 
 
+    vendeu_bebida = (
         frame_bebidas_um.get_checkbox_state() == "sim" or
+        frame_bebidas_dois.get_checkbox_state() == "sim"
+    )
     vendeu_outro = frame_outros.get_checkbox_state() == "sim"
 
     vendeu_marmita_pequena = marm_pequena.get_checkbox_state() == "sim"
@@ -271,12 +274,22 @@ def coletar_iformacoes_da_venda(*args):
     vendeu_feijoada = marm_feijoada.get_checkbox_state() == "sim"
 
     if vendeu_bebida:
+
         if frame_bebidas_um.get_checkbox_state() == "sim":
-        vendido = dict(
+            vendido = dict(
                 quantidade=frame_bebidas_um.get_quant_from_quantmenu(),
                 item=frame_bebidas_um.menu_de_items.current_value.get()
+            )
 
-        produtos_vendidos["Bebidas"] = vendido
+            produtos_vendidos["Bebidas"]["bebidas_um"] = vendido
+
+        if frame_bebidas_dois.get_checkbox_state() == "sim":
+            vendido = dict(
+                quantidade=frame_bebidas_dois.get_quant_from_quantmenu(),
+                item=frame_bebidas_dois.menu_de_items.current_value.get()
+            )
+
+            produtos_vendidos["Bebidas"]["bebidas_dois"] = vendido
 
     if vendeu_outro:
         vendido = dict(
