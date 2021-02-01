@@ -239,7 +239,10 @@ def grey_out_checkbox_pagar_com_cartao(*args):
 
 def coletar_iformacoes_da_venda(*args):
     produtos_vendidos = {
-        "Bebidas":None,
+        "Bebidas":{
+            "bebidas_um":None,
+            "bebidas_dois":None,
+        },
         "Outros":None,
         "Marmitas":{
             "Pequena":None,
