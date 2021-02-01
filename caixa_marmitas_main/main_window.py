@@ -70,7 +70,8 @@ marm_feijoada.link_var_to_frame(frame_valor_marmitas)
 marm_feijoada.add_traces_to_dropdownmenus()
 
 # bottom right corner (parte do pagamento)
-pagamento_frame = Frame(root_window, width=300, height=300, bg='gray')
+pagamento_frame = Frame(root_window, width=300, height=250, bg='yellow', borderwidth=1, relief='solid')
+pagamento_frame.columnconfigure(0, weight=1)
 
 total_frame = TrocoFrames(pagamento_frame, "Total")
 
