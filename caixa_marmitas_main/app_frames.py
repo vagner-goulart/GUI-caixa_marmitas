@@ -75,7 +75,7 @@ class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
         self.check_box.grid(row=linha, column=0)
 
         self.menu_de_items = BaseDropdownMenu(self, lista_d_items)
-        self.menu_de_items.grid(row=linha, column=1, padx=(25,20))
+        self.menu_de_items.grid(row=linha, column=1, padx=(15,15))
 
         self.menu_de_quantidade = BaseDropdownMenuForQuant(self, var_nome)
         self.menu_de_quantidade.grid(row=linha, column=2)
