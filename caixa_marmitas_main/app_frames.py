@@ -114,7 +114,7 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
 
     def __init__(self, janela, linha, nome_marmita, var_nome, preco, **kwargs):
         super().__init__(janela, **kwargs)
-        self.config(bg=None, bd=1, relief='raised')
+        self.config( bd=1, relief='raised')
 
         self.preco = preco
 
