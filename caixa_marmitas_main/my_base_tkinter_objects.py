@@ -33,7 +33,8 @@ class BaseDropdownMenu(OptionMenu):
         self.config(
             width=15,
             font=("SourceSansPro", 13),
-            state=DISABLED)
+            state=DISABLED
+            )
 
         self.current_value.set(self.opcoes[0])
 
