@@ -224,7 +224,7 @@ class TrocoFrames(Frame):
         self.generic_txt_label.grid(row=0, column=0)
         
         self.value_label = Label(
-            self, textvariable=self.value, bd=2, relief='solid', width=10, anchor=E, font=("SourceSansPro", 20))
+            self, textvariable=self.value, bd=2, relief='raised', width=10, anchor=E, font=("SourceSansPro", 20))
         self.value_label.grid(row=0, column=1)
 
         self.grid(padx=(5,0), pady=(10,0), columnspan=3)
