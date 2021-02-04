@@ -220,7 +220,7 @@ class TrocoFrames(Frame):
         
         self.value = StringVar(value="0.00")
 
-        self.generic_txt_label = Label(self, text=texto+":", width=5, anchor=W, font=("SourceSansPro", 20))
+        self.generic_txt_label = Label(self, text=texto+":", width=5, anchor=W, font=("SourceSansPro", 20), bd=2, relief='raised')
         self.generic_txt_label.grid(row=0, column=0)
         
         self.value_label = Label(
