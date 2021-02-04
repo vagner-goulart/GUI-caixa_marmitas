@@ -67,7 +67,7 @@ class CommonMethodsBebidasMarmitas:
 class BebidasFrames(Frame, CommonMethodsBebidasMarmitas):
 
     def __init__(self, janela, linha, pading, lista_d_items, var_nome, preco, **kwargs):
-        super().__init__(janela,bg='red', **kwargs)
+        super().__init__(janela, bd=1, relief='raised', **kwargs)
         
         self.preco = preco
 
