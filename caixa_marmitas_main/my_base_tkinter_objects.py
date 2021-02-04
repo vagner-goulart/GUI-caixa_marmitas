@@ -69,7 +69,7 @@ class FrameDisplayValue(Frame):
         self.value_var = DoubleVar(self, value=valor)
 
         generic_txt_label = Label(
-            self, text="VALOR:", font=("SourceSansPro", 11), bg="#E0E0E0",)
+            self, text="VALOR:", font=("SourceSansPro", 11))
         generic_txt_label.grid(row=0, column=0, stick=E)
 
         self.label_valor_3 = Label(
