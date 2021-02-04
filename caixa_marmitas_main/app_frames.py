@@ -131,16 +131,14 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
         self.label_marmita.grid(row=linha, column=2)
 
         # TODO: this 'if' is kinda garbage, find better solution
-        if not nome_marmita == "FEIJOADA" and today == "Saturday":
-            self.check_box_feijoada = BaseCheckBox(self, state=DISABLED, text="+Feij.")
+        if not "FEIJOADA" in nome_marmita and today == "Saturday":
+            self.check_box_feijoada = BaseCheckBox(self, bd=1, relief='raised', state=DISABLED, text="+Feij.")
             self.check_box_feijoada.grid(row=linha, column=3, padx=(10,10))
 
             self.check_box_feijoada.add_trace(self.add_feijoada_value)
 
         # TODO: this is totaly temporary, i'll find a better solution
-        if nome_marmita == "FEIJOADA" and today != "Saturday":
-            pass
-        else:
+        if not ("FEIJOADA" in nome_marmita and today != "Saturday"):
             self.grid(pady=(20,0))
 
         self.check_box.check_var.trace_add('write', self.grey_out_elements)
