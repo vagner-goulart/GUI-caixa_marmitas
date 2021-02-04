@@ -127,7 +127,7 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
         self.label_marmita = Label(
             self,
             text=nome_marmita, font=("SourceSansPro", 11),
-            width=10,)
+            width=10, state=DISABLED)
         self.label_marmita.grid(row=linha, column=2)
 
         # TODO: this 'if' is kinda garbage, find better solution
