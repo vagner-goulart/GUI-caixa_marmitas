@@ -153,14 +153,23 @@ class MarmitasFrames(Frame, CommonMethodsBebidasMarmitas):
         self.update_value_label()
 
         if check_buton_state == "sim":
-            self.menu_de_quantidade.config(state=NORMAL)
+            self.menu_de_quantidade.config(state=NORMAL, bg='#ccffcc', highlightbackground='#ccffcc')
+
+            self.label_marmita.config(state=NORMAL, bg='#ccffcc')
+
             if hasattr(self, 'check_box_feijoada'):
-                self.check_box_feijoada.config(state=NORMAL)
+                self.check_box_feijoada.config(state=NORMAL, bg='#ccffcc')
+
+            self.config(bg='#ccffcc')
         
         else:
-            self.menu_de_quantidade.config(state=DISABLED)
+            self.menu_de_quantidade.config(state=DISABLED,bg="#f0f0f0", highlightbackground='#f0f0f0')
+            self.label_marmita.config(state=DISABLED,bg="#f0f0f0")
+
             if hasattr(self, 'check_box_feijoada'):
-                self.check_box_feijoada.config(state=DISABLED)
+                self.check_box_feijoada.config(state=DISABLED,bg="#f0f0f0")
+
+            self.config(bg="#f0f0f0")
 
     def reset_values(self):
         if self.get_checkbox_state() == "nao":
