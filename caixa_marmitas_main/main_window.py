@@ -67,7 +67,7 @@ ingredientes_dia = get_today_ingredients()
 
 prato_dia_frame = PratoDiaFrame(frame_dia_ingredientes, dia_semana, ingredientes_dia)
 
-marm_feijoada = MarmitasFrames(frame_dia_ingredientes, 1, "FEIJOADA", "feijoada", 30.0)
+marm_feijoada.check_box.load_on_off_images(on_image, off_image)
 
 marm_feijoada.link_var_to_frame(frame_valor_marmitas)
 marm_feijoada.add_traces_to_dropdownmenus()
