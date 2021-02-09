@@ -205,6 +205,9 @@ def reset_all_values(event=None):
     dinheiro_recebido_frame.reset_values()
     troco_do_dinheiro_frame.reset_values()
 
+    if dinheiro_faltando_label.winfo_manager() == 'grid':
+        dinheiro_faltando_label.grid_remove()
+
     botao_cancelar.config(bg='#F0F0F0')
     botao_terminar.config(bg='#F0F0F0', state=DISABLED)
 
