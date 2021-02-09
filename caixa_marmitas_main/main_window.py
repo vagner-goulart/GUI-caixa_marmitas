@@ -55,6 +55,9 @@ tipos_de_marmitas = [marm_pequena, marm_media, marm_grande]
 frame_valor_marmitas = FrameDisplayValue(frame_marmitas)
 frame_valor_marmitas.grid(pady=(15,0))
 
+for marm in tipos_de_marmitas:
+    marm.check_box.load_on_off_images(on_image, off_image)
+
 # bottom left corner (parte do prato do dia)
 frame_dia_ingredientes = Frame(root_window ,width=330, height=250 ,bg="green", borderwidth=1, relief='solid')
 frame_dia_ingredientes.columnconfigure(0, weight=1)
